@@ -23,7 +23,7 @@ namespace Ramune.MoreDecoys.Items
             // Create new PrefabInfo with Nautilus, gives the item a TechType and such
             PrefabInfo CyclopsStasisDecoyInfo = PrefabInfo
                 .WithTechType("CyclopsDecoyStasis", "Creature stasis decoy", "A decoy that deploys a stasis field after a few seconds.")
-                .WithIcon(Sprite.Get("DecoyStasis_sprite"))
+                .WithIcon(Sprite.Get("DecoyStasis"))
                 .WithSizeInInventory(new Vector2int(1, 2));
             info = CyclopsStasisDecoyInfo;
 

@@ -17,5 +17,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Utils\Recipe.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)utils\Sound.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils\Sprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)utils\Texture.cs" />
   </ItemGroup>
 </Project>

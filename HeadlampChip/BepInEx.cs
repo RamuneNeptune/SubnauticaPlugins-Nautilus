@@ -3,16 +3,15 @@ using BepInEx.Logging;
 using BepInEx;
 using HarmonyLib;
 using RamuneLib.Main;
-using Ramune.MoreDecoys.Items;
 
-namespace Ramune.MoreDecoys
+namespace Ramune.HeadlampChip
 {
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
-    public class MoreDecoys : BaseUnityPlugin
+    public class HeadlampChip : BaseUnityPlugin
     {
-        private const string myGUID = "com.ramune.MoreDecoys";
-        private const string pluginName = "More Decoys";
+        private const string myGUID = "com.ramune.HeadlampChip";
+        private const string pluginName = "Headlamp Chip";
         private const string versionString = "1.0.0";
         private static readonly Harmony harmony = new Harmony(myGUID);
         public static ManualLogSource logger;
@@ -21,9 +20,6 @@ namespace Ramune.MoreDecoys
         {
             harmony.PatchAll();
             Checks.FindPiracy();
-            StasisDecoy.Patch();
-            ExplosiveDecoy.Patch();
-            GasDecoy.Patch();
             Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
             logger = Logger;
         }

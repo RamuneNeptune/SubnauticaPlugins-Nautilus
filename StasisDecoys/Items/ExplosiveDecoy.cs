@@ -13,17 +13,15 @@ namespace Ramune.MoreDecoys.Items
         public static PrefabInfo info;
         public static void Patch()
         {
-            // Create new RecipeData
             RecipeData recipe = Recipe.Create(3,
                 new Ingredient(TechType.Titanium, 5),
                 new Ingredient(TechType.WiringKit, 1),
                 new Ingredient(TechType.CrashPowder, 2),
                 new Ingredient(TechType.Quartz, 1));
 
-            // Create new PrefabInfo with Nautilus, gives the item a TechType and such
             PrefabInfo CyclopsExplosiveDecoyInfo = PrefabInfo
                 .WithTechType("CyclopsDecoyExplosive", "Creature explosive decoy", "A decoy that deploys an explosive after a few seconds.")
-                .WithIcon(Sprite.Get(TechType.CyclopsDecoy))
+                .WithIcon(Sprite.Get("DecoyExplosive"))
                 .WithSizeInInventory(new Vector2int(1, 2));
             info = CyclopsExplosiveDecoyInfo;
 
