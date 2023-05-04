@@ -23,15 +23,8 @@ namespace Ramune.MoreDecoys
 
         public void Start() // Runs once after a DecoyHandler is created/added to a decoy
         {
-            if(id == 1)
-            {
-                StartCoroutine(DeployStasis()); // IEnumerators have to be started with 'StartCoroutine(Method());'
-            }
-            else if(id == 2)
-            {
-                explosion = Sound.Create("DecoyExplosive");
-                StartCoroutine(DeployExplosive());
-            }
+            if(id == 1) StartCoroutine(DeployStasis()); // IEnumerators have to be started with 'StartCoroutine(Method());'
+            else if(id == 2) StartCoroutine(DeployExplosive());
             else MoreDecoys.logger.LogError("DecoyHandler could not find valid 'id'");
         }
 
@@ -56,6 +49,8 @@ namespace Ramune.MoreDecoys
 
         public IEnumerator DeployExplosive()
         {
+            explosion = Sound.Create("DecoyExplosive");
+
             GameObject prefab;
             var task = CraftData.GetPrefabForTechTypeAsync(TechType.WhirlpoolTorpedo);
             yield return task;
