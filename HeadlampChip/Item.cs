@@ -10,6 +10,7 @@ namespace Ramune.HeadlampChip
 {
     public static class HeadlampChipItem
     {
+        public static PrefabInfo info;
         public static void Patch()
         {
             RecipeData recipe = Recipe.Create(3,
@@ -19,9 +20,10 @@ namespace Ramune.HeadlampChip
                 new Ingredient(TechType.AdvancedWiringKit, 1));
 
             PrefabInfo HeadlampChipInfo = PrefabInfo
-                .WithTechType("HeadlampChip", "Headlamp Chip", "Headlamp chip implanted into the brain.")
+                .WithTechType("HeadlampChip", "Headlamp Chip", "RGB capable headlamp chip implanted into the brain.")
                 .WithIcon(Sprite.Get(TechType.Marki1))
-                .WithSizeInInventory(new Vector2int(1, 2));
+                .WithSizeInInventory(new Vector2int(1, 1));
+            info = HeadlampChipInfo;
 
             CustomPrefab HeadlampChip = new CustomPrefab(HeadlampChipInfo);
             PrefabTemplate clone = new CloneTemplate(HeadlampChipInfo, TechType.MapRoomHUDChip)

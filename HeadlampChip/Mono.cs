@@ -43,7 +43,7 @@ namespace Ramune.HeadlampChip
 
         public void Update()
         {
-            if (!ChipEquipped() || player.isPiloting)
+            if(!ChipEquipped() || player.isPiloting)
             {
                 light.enabled = false;
                 return;
@@ -54,9 +54,9 @@ namespace Ramune.HeadlampChip
             lightRoot.transform.eulerAngles = inv.cameraSocket.eulerAngles;
 
             lightState = light.enabled ? 1 : 0;
-            if (!Cursor.visible && GameInput.GetKeyDown(HeadlampChip.config.toggle))
+            if(!Cursor.visible && GameInput.GetKeyDown(HeadlampChip.config.toggle))
             {
-                switch (lightState)
+                switch(lightState)
                 {
                     case 0:
                         light.enabled = true;
@@ -71,15 +71,15 @@ namespace Ramune.HeadlampChip
         public bool ChipEquipped()
         {
             Equipment equipment = Inventory.main?.equipment;
-            if (equipment == null) return false;
+            if(equipment == null) return false;
 
             List<string> Slots = new List<string>();
             equipment.GetSlots(EquipmentType.Chip, Slots);
 
-            for (int i = 0; i < Slots.Count; i++)
+            for(int i = 0; i < Slots.Count; i++)
             {
                 string slot = Slots[i];
-                if (equipment.GetTechTypeInSlot(slot) == HeadlampChipItem.thisTechType) return true;
+                if(equipment.GetTechTypeInSlot(slot) == HeadlampChipItem.info.TechType) return true;
             }
             return false;
         }
@@ -94,6 +94,15 @@ namespace Ramune.HeadlampChip
             light.spotAngle = 90f * HeadlampChip.config.conesize;
             light.innerSpotAngle = 80f * HeadlampChip.config.conesize;
             light.color = color;
+        }
+        public float currentTime;
+
+        public void Rainbow()
+        {
+            currentTime += Time.deltaTime / HeadlampChip.config.rainbowDuration;
+            if (currentTime >= 1f) currentTime -= 1f;
+
+            Color color = Color.HSVToRGB(currentTime, HeadlampChip.config.rainbowSaturation, HeadlampChip.config.rainbowOpacity);
         }
     }
 }

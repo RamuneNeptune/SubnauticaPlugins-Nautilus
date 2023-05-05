@@ -62,16 +62,7 @@ namespace Ramune.MoreDecoys
             pod.smokeDuration = 30f;
 
             yield return new WaitForSecondsRealtime(7f);
-            pod.detonated = true;
-            pod.detonateTime = Time.time;
-            pod.model.SetActive(false);
-            pod.mainCollider.enabled = false;
-            pod.gasEffect = Instantiate(pod.gasEffectPrefab);
-            pod.gasEffect.transform.parent = gameObject.transform;
-            UWE.Utils.ZeroTransform(pod.gasEffect);
-            pod.sphereCollider = pod.gasEffect.AddComponent<SphereCollider>();
-            pod.sphereCollider.radius = pod.damageRadius;
-            pod.sphereCollider.isTrigger = true;
+
             Log.Colored(Colors.Lime, "Gas deployed!");
         }
     }

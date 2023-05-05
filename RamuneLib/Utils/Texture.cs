@@ -8,6 +8,6 @@ namespace RamuneLib.Utils
 {
     public static class Texture
     {
-        public static Texture2D Get(string filename) => ImageUtils.LoadTextureFromFile(Path.Combine(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Assets"), filename + ".png"));
+        public static Texture2D Get(string filename) => ImageUtils.LoadTextureFromFile(IOUtilities.Combine(Assembly.GetExecutingAssembly().Location, "Assets", filename + ".png"));
     }
 }
