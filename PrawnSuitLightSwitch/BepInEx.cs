@@ -2,7 +2,7 @@
 using BepInEx.Logging;
 using BepInEx;
 using HarmonyLib;
-using RamuneLib.Main;
+using RamuneLib;
 using Nautilus.Options.Attributes;
 using Nautilus.Json;
 using UnityEngine;
@@ -15,18 +15,16 @@ namespace Ramune.PrawnSuitLightSwitch
     public class PrawnSuitLightSwitch : BaseUnityPlugin
     {
         internal static Options config { get; } = OptionsPanelHandler.RegisterModOptions<Options>();
-
         private const string myGUID = "com.ramune.PrawnSuitLightSwitch";
         private const string pluginName = "Prawn Suit Light Switch";
         private const string versionString = "1.0.0";
-
         private static readonly Harmony harmony = new Harmony(myGUID);
         public static ManualLogSource logger;
 
         public void Awake()
         {
             harmony.PatchAll();
-            Checks.FindPiracy();
+            Main.FindPiracy();
             Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
             logger = Logger;
         }

@@ -3,7 +3,7 @@ using Nautilus.Assets.PrefabTemplates;
 using Nautilus.Assets;
 using Nautilus.Crafting;
 using static CraftData;
-using RamuneLib.Utilities;
+using RamuneLib;
 using Nautilus.Assets.Gadgets;
 
 namespace Ramune.MoreDecoys.Items
@@ -13,7 +13,7 @@ namespace Ramune.MoreDecoys.Items
         public static PrefabInfo info;
         public static void Patch()
         {
-            RecipeData recipe = Recipe.Create(3,
+            RecipeData recipe = Utilities.CreateRecipe(3,
                 new Ingredient(TechType.Titanium, 4),
                 new Ingredient(TechType.Magnetite, 1),
                 new Ingredient(TechType.Lithium, 2),
@@ -21,7 +21,7 @@ namespace Ramune.MoreDecoys.Items
 
             PrefabInfo CyclopsStasisDecoyInfo = PrefabInfo
                 .WithTechType("CyclopsDecoyStasis", "Creature stasis decoy", "A decoy that deploys a stasis field after a few seconds.")
-                .WithIcon(Sprite.Get("DecoyStasis"))
+                .WithIcon(Utilities.GetSprite("DecoyStasis"))
                 .WithSizeInInventory(new Vector2int(1, 2));
             info = CyclopsStasisDecoyInfo;
 

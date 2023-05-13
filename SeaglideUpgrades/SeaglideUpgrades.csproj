@@ -344,12 +344,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BepInEx.cs" />
-    <Compile Include="Handlers\MK1Handler.cs" />
-    <Compile Include="Handlers\MK2Handler.cs" />
-    <Compile Include="Handlers\MK3Handler.cs" />
     <Compile Include="Items\MK1.cs" />
     <Compile Include="Items\MK2.cs" />
     <Compile Include="Items\MK3.cs" />
+    <Compile Include="Patches\PlayerTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

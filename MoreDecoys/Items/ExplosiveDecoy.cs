@@ -3,7 +3,7 @@ using Nautilus.Assets.PrefabTemplates;
 using Nautilus.Assets;
 using Nautilus.Crafting;
 using static CraftData;
-using RamuneLib.Utilities;
+using RamuneLib;
 using Nautilus.Assets.Gadgets;
 
 namespace Ramune.MoreDecoys.Items
@@ -13,7 +13,7 @@ namespace Ramune.MoreDecoys.Items
         public static PrefabInfo info;
         public static void Patch()
         {
-            RecipeData recipe = Recipe.Create(3,
+            RecipeData recipe = Utilities.CreateRecipe(3,
                 new Ingredient(TechType.Titanium, 5),
                 new Ingredient(TechType.Magnetite, 2),
                 new Ingredient(TechType.CrashPowder, 1),
@@ -21,7 +21,7 @@ namespace Ramune.MoreDecoys.Items
 
             PrefabInfo CyclopsExplosiveDecoyInfo = PrefabInfo
                 .WithTechType("CyclopsDecoyExplosive", "Creature explosive decoy", "A decoy that deploys a sequence of three explosions, each with a 7 second delay.")
-                .WithIcon(Sprite.Get("DecoyExplosive"))
+                .WithIcon(Utilities.GetSprite("DecoyExplosive"))
                 .WithSizeInInventory(new Vector2int(1, 2));
             info = CyclopsExplosiveDecoyInfo;
 

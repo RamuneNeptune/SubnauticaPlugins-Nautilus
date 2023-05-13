@@ -7,6 +7,7 @@ using UnityEngine;
 using HarmonyLib;
 using RamuneLib;
 using BepInEx;
+using Ramune.SeaglideUpgrades.Items;
 
 namespace Ramune.SeaglideUpgrades
 {
@@ -34,8 +35,29 @@ namespace Ramune.SeaglideUpgrades
         {
             harmony.PatchAll();
             Main.FindPiracy();
+            Workbench();
+            MK1.Patch();
+            MK2.Patch();
+            MK3.Patch();
             Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
             logger = Logger;
+        }
+
+        public void Workbench()
+        {
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "LithiumIonBattery");
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "HeatBlade");
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "PlasteelTank");
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "HighCapacityTank");
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "UltraGlideFins");
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "SwimChargeFins");
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "RepulsionCannon");
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "CyclopsHullModule2");
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "CyclopsHullModule3");
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "SeamothHullModule2");
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "SeamothHullModule3");
+            CraftTreeHandler.RemoveNode(CraftTree.Type.Workbench, "ExoHullModule2");
+            CraftTreeHandler.AddTabNode(CraftTree.Type.Workbench, "Seaglide", "Seaglide", Utilities.GetSprite(TechType.Seaglide));
         }
     }
     [Menu("Seaglide Upgrades")]

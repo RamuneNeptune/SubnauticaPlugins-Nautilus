@@ -2,7 +2,7 @@
 using BepInEx.Logging;
 using BepInEx;
 using HarmonyLib;
-using RamuneLib.Main;
+using RamuneLib;
 using Ramune.MoreDecoys.Items;
 
 namespace Ramune.MoreDecoys
@@ -20,7 +20,7 @@ namespace Ramune.MoreDecoys
         public void Awake()
         {
             harmony.PatchAll();
-            Checks.FindPiracy();
+            Main.FindPiracy();
             StasisDecoy.Patch();
             ExplosiveDecoy.Patch();
             GasDecoy.Patch();

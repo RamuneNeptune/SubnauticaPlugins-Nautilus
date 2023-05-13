@@ -71,23 +71,23 @@ namespace RamuneLib
 
     public static class Colors
     {
-        public static string Red = "#ff0000";
-        public static string Rorange = "#ff4800";
-        public static string Orange = "#ff9100";
-        public static string Amber = "#ffaa00";
-        public static string Yellow = "ffd500";
-        public static string Lemon = "#d9ff00";
-        public static string Lime = "#91ff00";
-        public static string Green = "#00ff00";
-        public static string Emerald = "#00ff91";
-        public static string Aqua = "#00ffd9";
-        public static string Cyan = "#00d9ff";
-        public static string LightBlue = "#0091ff";
-        public static string Blue = "#0048ff";
-        public static string Purple = "#7300ff";
-        public static string Pink = "#ff00ff";
-        public static string White = "ffffff";
-        public static string Grey = "";
-        public static string Black = "000000";
+        public static string Red = "<color=#ff0000>";
+        public static string Rorange = "<color=#ff4800>";
+        public static string Orange = "<color=#ff9100>";
+        public static string Amber = "<color=#ffaa00>";
+        public static string Yellow = "<color=#ffd500>";
+        public static string Lemon = "<color=#d9ff00>";
+        public static string Lime = "<color=#91ff00>";
+        public static string Green = "<color=#00ff00>";
+        public static string Emerald = "<color=#00ff91>";
+        public static string Aqua = "<color=#00ffd9>";
+        public static string Cyan = "<color=#00d9ff>";
+        public static string LightBlue = "<color=#0091ff>";
+        public static string Blue = "<color=#0048ff>";
+        public static string Purple = "<color=#7300ff>";
+        public static string Pink = "<color=#ff00ff>";
+        public static string White = "<color=ffffff>";
+        public static string Grey = "<color=>";
+        public static string Black = "<color=000000>";
     }
 }

@@ -25,7 +25,6 @@ namespace Ramune.CustomCyclopsHorn
         private const string myGUID = "com.ramune.CustomCyclopsHorn";
         private const string pluginName = "Custom Cyclops Horn";
         private const string versionString = "1.0.0";
-
         private static readonly Harmony harmony = new Harmony(myGUID);
         public static ManualLogSource logger;
 

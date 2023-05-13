@@ -1,6 +1,6 @@
 ﻿
 using UnityEngine;
-using Texture = RamuneLib.Utilities.Texture;
+using RamuneLib;
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -10,16 +10,16 @@ namespace Ramune.MoreDecoys
     {
         public static Quaternion quaternion = new Quaternion(1f, 1f, 1f, 1f);
 
-        public static Texture2D stasisTexture = Texture.Get("DecoyStasis_tex");
-        public static Texture2D stasisIllum = Texture.Get("DecoyStasis_illum");
+        public static Texture2D stasisTexture = Utilities.GetTexture("DecoyStasis_tex");
+        public static Texture2D stasisIllum = Utilities.GetTexture("DecoyStasis_illum");
         public static Color stasisColor = new Color(76f, 129f, 190f, 1f);
 
-        public static Texture2D explosiveTexture = Texture.Get("DecoyExplosive_tex");
-        public static Texture2D explosiveIllum = Texture.Get("DecoyExplosive_illum");
+        public static Texture2D explosiveTexture = Utilities.GetTexture("DecoyExplosive_tex");
+        public static Texture2D explosiveIllum = Utilities.GetTexture("DecoyExplosive_illum");
         public static Color explosiveColor = new Color(178f, 24f, 0f, 1f);
 
-        public static Texture2D gasTexture = Texture.Get("DecoyGas_tex");
-        public static Texture2D gasIllum = Texture.Get("DecoyGas_illum");
+        public static Texture2D gasTexture = Utilities.GetTexture("DecoyGas_tex");
+        public static Texture2D gasIllum = Utilities.GetTexture("DecoyGas_illum");
         public static Color gasColor = new Color(49f, 153f, 79f, 1f);
 
 

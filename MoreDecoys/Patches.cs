@@ -1,10 +1,8 @@
 ﻿
 using System.Collections;
-using HarmonyLib;
 using Ramune.MoreDecoys.Handlers;
 using Ramune.MoreDecoys.Items;
-using RamuneLib.Utilities;
-using UnityEngine;
+using HarmonyLib;
 using UWE;
 
 namespace Ramune.MoreDecoys
