@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2CE2ACCC-CE9F-4439-8A10-AFB221925809}</ProjectGuid>
+    <ProjectGuid>{7B162F4D-C0C7-41EC-A55D-AB785571F0DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ramune.HeadlampChip</RootNamespace>
-    <AssemblyName>HeadlampChip</AssemblyName>
+    <RootNamespace>Ramune.SeaglideUpgrades</RootNamespace>
+    <AssemblyName>SeaglideUpgrades</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -344,9 +344,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BepInEx.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Mono.cs" />
-    <Compile Include="Patch.cs" />
+    <Compile Include="Handlers\MK1Handler.cs" />
+    <Compile Include="Handlers\MK2Handler.cs" />
+    <Compile Include="Handlers\MK3Handler.cs" />
+    <Compile Include="Items\MK1.cs" />
+    <Compile Include="Items\MK2.cs" />
+    <Compile Include="Items\MK3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

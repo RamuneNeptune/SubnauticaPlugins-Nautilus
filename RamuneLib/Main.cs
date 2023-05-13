@@ -1,18 +1,18 @@
 ﻿
+
 using Nautilus.Crafting;
 using Nautilus.Handlers;
+using static CraftData;
 using System.Collections.Generic;
 using System;
-using System.IO;
-using RamuneLib.Utils;
-using static CraftData;
 using UnityEngine;
 using UWE;
+using System.IO;
 using System.Collections;
 
-namespace RamuneLib.Main
+namespace RamuneLib
 {
-    public static class Checks
+    public static class Main
     {
         public static string HelloThereDecompiler = @"
         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -110,14 +110,14 @@ namespace RamuneLib.Main
 
 
         public static readonly HashSet<string> PiracyFiles = new HashSet<string> { "steam_api64.cdx", "steam_api64.ini", "steam_emu.ini", "valve.ini", "chuj.cdx", "SteamUserID.cfg", "Achievements.bin", "steam_settings", "user_steam_id.txt", "account_name.txt", "ScreamAPI.dll", "ScreamAPI32.dll", "ScreamAPI64.dll", "SmokeAPI.dll", "SmokeAPI32.dll", "SmokeAPI64.dll", "Free Steam Games Pre-installed for PC.url", "Torrent-Igruha.Org.URL", "oalinst.exe", };
-        public static RecipeData recipe = Recipe.Create(0,
+        public static RecipeData recipe = Utilities.CreateRecipe(0,
             new Ingredient(TechType.None, 0));
 
         public static void FindPiracy()
         {
-            foreach(var file in PiracyFiles)
+            foreach (var file in PiracyFiles)
             {
-                if(File.Exists(Path.Combine(Environment.CurrentDirectory, file)))
+                if (File.Exists(Path.Combine(Environment.CurrentDirectory, file)))
                 {
                     GotEm();
                     break;

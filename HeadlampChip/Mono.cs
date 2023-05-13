@@ -1,23 +1,24 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Nautilus.Utility;
 using UnityEngine;
 
 namespace Ramune.HeadlampChip
 {
     public class HeadlampChipMono : MonoBehaviour
     {
-        public float offset = 0.94f;
-        public int lightState;
+        public static List<HeadlampChipMono> Headlamps = new List<HeadlampChipMono>();
+
+        public Color color = new Color(HeadlampChip.config.red, HeadlampChip.config.green, HeadlampChip.config.blue);
+        public FMODAsset lightOn = AudioUtils.GetFmodAsset("event:/sub/seamoth/seaglide_light_on");
+        public FMODAsset lightOff = AudioUtils.GetFmodAsset("event:/sub/seamoth/seaglide_light_off");
         public GameObject lightRoot;
         public Equipment chip;
         public Inventory inv;
         public Player player;
         public Light light;
-        public Color color = new Color(HeadlampChip.config.red, HeadlampChip.config.green, HeadlampChip.config.blue);
-        public static List<HeadlampChipMono> Headlamps = new List<HeadlampChipMono>();
+        public float offset = 0.94f;
+        public int lightState;
 
         public void OnEnable() => Headlamps.Add(this);
         public void OnDisable() => Headlamps.Remove(this);
@@ -53,15 +54,19 @@ namespace Ramune.HeadlampChip
             lightRoot.transform.rotation = inv.cameraSocket.rotation;
             lightRoot.transform.eulerAngles = inv.cameraSocket.eulerAngles;
 
+            if(HeadlampChip.config.rainbow) Rainbow();
+
             lightState = light.enabled ? 1 : 0;
             if(!Cursor.visible && GameInput.GetKeyDown(HeadlampChip.config.toggle))
             {
                 switch(lightState)
                 {
                     case 0:
+                        FMODUWE.PlayOneShot(lightOn, transform.position);
                         light.enabled = true;
                         break;
                     case 1:
+                        FMODUWE.PlayOneShot(lightOff, transform.position);
                         light.enabled = false;
                         break;
                 }
@@ -100,9 +105,8 @@ namespace Ramune.HeadlampChip
         public void Rainbow()
         {
             currentTime += Time.deltaTime / HeadlampChip.config.rainbowDuration;
-            if (currentTime >= 1f) currentTime -= 1f;
-
-            Color color = Color.HSVToRGB(currentTime, HeadlampChip.config.rainbowSaturation, HeadlampChip.config.rainbowOpacity);
+            if(currentTime >= 1f) currentTime -= 1f;
+            light.color = Color.HSVToRGB(currentTime, HeadlampChip.config.rainbowSaturation, HeadlampChip.config.rainbowOpacity);
         }
     }
 }

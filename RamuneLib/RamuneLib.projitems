@@ -9,13 +9,7 @@
     <Import_RootNamespace>RamuneLib</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Main\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Main\Check.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Utils\Log.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Utils\Recipe.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Utils\Sprite.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)utils\Texture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Main.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities.cs" />
   </ItemGroup>
 </Project>

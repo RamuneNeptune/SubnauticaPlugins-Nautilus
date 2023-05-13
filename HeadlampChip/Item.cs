@@ -3,8 +3,8 @@ using Nautilus.Assets;
 using Nautilus.Assets.Gadgets;
 using Nautilus.Assets.PrefabTemplates;
 using Nautilus.Crafting;
-using RamuneLib.Utils;
 using static CraftData;
+using static RamuneLib.Utilities;
 
 namespace Ramune.HeadlampChip
 {
@@ -13,7 +13,7 @@ namespace Ramune.HeadlampChip
         public static PrefabInfo info;
         public static void Patch()
         {
-            RecipeData recipe = Recipe.Create(3,
+            RecipeData recipe = CreateRecipe(3,
                 new Ingredient(TechType.Lithium, 2),
                 new Ingredient(TechType.Glass, 1),
                 new Ingredient(TechType.Battery, 1),
@@ -21,7 +21,7 @@ namespace Ramune.HeadlampChip
 
             PrefabInfo HeadlampChipInfo = PrefabInfo
                 .WithTechType("HeadlampChip", "Headlamp Chip", "RGB capable headlamp chip implanted into the brain.")
-                .WithIcon(Sprite.Get(TechType.Marki1))
+                .WithIcon(GetSprite(TechType.Marki1))
                 .WithSizeInInventory(new Vector2int(1, 1));
             info = HeadlampChipInfo;
 
@@ -35,7 +35,9 @@ namespace Ramune.HeadlampChip
             HeadlampChip.SetEquipment(EquipmentType.Chip); 
             HeadlampChip.SetRecipe(recipe)
                 .WithFabricatorType(CraftTree.Type.Fabricator) 
-                .WithStepsToFabricatorTab("Resources", "Electronics"); 
+                .WithStepsToFabricatorTab("Resources", "Electronics");
+
+            HeadlampChip.Register();
         }
     }
 }

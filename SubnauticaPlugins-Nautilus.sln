@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mods", "Mods", "{EFFF19E8-0A63-44F8-B064-59301058371C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Update", "Update", "{DCE23348-1DD4-41C7-897B-57EEA760D888}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "RamuneLib", "RamuneLib\RamuneLib.shproj", "{614655D4-29A8-4588-A4F5-2B0D618BC996}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadlampChip", "HeadlampChip\HeadlampChip.csproj", "{2CE2ACCC-CE9F-4439-8A10-AFB221925809}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FasterScanning", "FasterScanning\FasterScanning.csproj", "{07E75F7B-F846-45B0-A304-FAE15AB52062}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreDecoys", "MoreDecoys\MoreDecoys.csproj", "{B614F277-05F1-4137-9BF9-C455CD2C28AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{41A9DED5-894A-4326-A333-4627EE9DEB17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomCyclopsHorn", "CustomCyclopsHorn\CustomCyclopsHorn.csproj", "{5E35D883-A90E-40C4-ACEB-869BE9C93690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrawnSuitLightSwitch", "PrawnSuitLightSwitch\PrawnSuitLightSwitch.csproj", "{437E8F25-AC75-4A9A-8322-2E41A40EDCA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WIP", "WIP", "{44A14519-2323-4CC3-BEF9-CA1AF0067042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaglideUpgrades", "SeaglideUpgrades\SeaglideUpgrades.csproj", "{7B162F4D-C0C7-41EC-A55D-AB785571F0DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CE2ACCC-CE9F-4439-8A10-AFB221925809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE2ACCC-CE9F-4439-8A10-AFB221925809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE2ACCC-CE9F-4439-8A10-AFB221925809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE2ACCC-CE9F-4439-8A10-AFB221925809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07E75F7B-F846-45B0-A304-FAE15AB52062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E75F7B-F846-45B0-A304-FAE15AB52062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E75F7B-F846-45B0-A304-FAE15AB52062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E75F7B-F846-45B0-A304-FAE15AB52062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B614F277-05F1-4137-9BF9-C455CD2C28AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B614F277-05F1-4137-9BF9-C455CD2C28AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B614F277-05F1-4137-9BF9-C455CD2C28AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B614F277-05F1-4137-9BF9-C455CD2C28AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E35D883-A90E-40C4-ACEB-869BE9C93690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E35D883-A90E-40C4-ACEB-869BE9C93690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E35D883-A90E-40C4-ACEB-869BE9C93690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E35D883-A90E-40C4-ACEB-869BE9C93690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{437E8F25-AC75-4A9A-8322-2E41A40EDCA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{437E8F25-AC75-4A9A-8322-2E41A40EDCA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{437E8F25-AC75-4A9A-8322-2E41A40EDCA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{437E8F25-AC75-4A9A-8322-2E41A40EDCA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B162F4D-C0C7-41EC-A55D-AB785571F0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B162F4D-C0C7-41EC-A55D-AB785571F0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B162F4D-C0C7-41EC-A55D-AB785571F0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B162F4D-C0C7-41EC-A55D-AB785571F0DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DCE23348-1DD4-41C7-897B-57EEA760D888} = {EFFF19E8-0A63-44F8-B064-59301058371C}
+		{2CE2ACCC-CE9F-4439-8A10-AFB221925809} = {41A9DED5-894A-4326-A333-4627EE9DEB17}
+		{07E75F7B-F846-45B0-A304-FAE15AB52062} = {DCE23348-1DD4-41C7-897B-57EEA760D888}
+		{B614F277-05F1-4137-9BF9-C455CD2C28AE} = {41A9DED5-894A-4326-A333-4627EE9DEB17}
+		{41A9DED5-894A-4326-A333-4627EE9DEB17} = {EFFF19E8-0A63-44F8-B064-59301058371C}
+		{5E35D883-A90E-40C4-ACEB-869BE9C93690} = {41A9DED5-894A-4326-A333-4627EE9DEB17}
+		{437E8F25-AC75-4A9A-8322-2E41A40EDCA2} = {41A9DED5-894A-4326-A333-4627EE9DEB17}
+		{44A14519-2323-4CC3-BEF9-CA1AF0067042} = {EFFF19E8-0A63-44F8-B064-59301058371C}
+		{7B162F4D-C0C7-41EC-A55D-AB785571F0DA} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C92EE9F4-51B0-4E47-8021-0C968DB68EC0}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		RamuneLib\RamuneLib.projitems*{07e75f7b-f846-45b0-a304-fae15ab52062}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{2ce2accc-ce9f-4439-8a10-afb221925809}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{437e8f25-ac75-4a9a-8322-2e41a40edca2}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{5e35d883-a90e-40c4-aceb-869be9c93690}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{614655d4-29a8-4588-a4f5-2b0d618bc996}*SharedItemsImports = 13
+		RamuneLib\RamuneLib.projitems*{7b162f4d-c0c7-41ec-a55d-ab785571f0da}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{b614f277-05f1-4137-9bf9-c455cd2c28ae}*SharedItemsImports = 4
+	EndGlobalSection
+EndGlobal

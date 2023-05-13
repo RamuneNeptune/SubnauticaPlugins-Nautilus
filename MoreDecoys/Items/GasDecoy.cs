@@ -3,7 +3,7 @@ using Nautilus.Assets.PrefabTemplates;
 using Nautilus.Assets;
 using Nautilus.Crafting;
 using static CraftData;
-using RamuneLib.Utils;
+using RamuneLib.Utilities;
 using Nautilus.Assets.Gadgets;
 
 namespace Ramune.MoreDecoys.Items
@@ -14,9 +14,10 @@ namespace Ramune.MoreDecoys.Items
         public static void Patch()
         {
             RecipeData recipe = Recipe.Create(3,
-                new Ingredient(TechType.Titanium, 5),
+                new Ingredient(TechType.Titanium, 4),
                 new Ingredient(TechType.GasPod, 2),
-                new Ingredient(TechType.Quartz, 1));
+                new Ingredient(TechType.Quartz, 2),
+                new Ingredient(TechType.WiringKit, 1));
 
             PrefabInfo CyclopsGasDecoyInfo = PrefabInfo
                 .WithTechType("CyclopsDecoyGas", "Creature gas decoy", "A decoy that deploys a gas field after a few seconds that slowly applies damage to attracted fauna.")
@@ -35,5 +36,5 @@ namespace Ramune.MoreDecoys.Items
 
             CyclopsGasDecoy.Register();
         }
-    } // 
-} // 
+    }
+}
