@@ -20,8 +20,8 @@ namespace Ramune.SeaglideUpgrades.Items
                 ModifyPrefab = go =>
                 {
                     var renderer = go.GetComponentInChildren<SkinnedMeshRenderer>(true);
-                    go.GetComponentsInChildren<SkinnedMeshRenderer>(true).ForEach(x => x.material.mainTexture = SeaglideUpgrades.MK3_Tex);
-                    go.GetComponentsInChildren<SkinnedMeshRenderer>(true).ForEach(x => x.material.SetTexture("_Illum", SeaglideUpgrades.MK3_Illum));
+                    go.GetComponentsInChildren<SkinnedMeshRenderer>(true).ForEach(x => x.material.mainTexture = Utilities.GetTexture("MK3_Tex"));
+                    go.GetComponentsInChildren<SkinnedMeshRenderer>(true).ForEach(x => x.material.SetTexture("_Illum", Utilities.GetTexture("MK3_Illum")));
                 }
             };
             prefab.SetGameObject(clone);

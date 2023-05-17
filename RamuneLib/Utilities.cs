@@ -9,7 +9,6 @@ using System.IO;
 using Nautilus.Assets;
 using Nautilus.Crafting;
 using static CraftData;
-using System.Threading;
 
 namespace RamuneLib
 {
@@ -62,9 +61,11 @@ namespace RamuneLib
         /// <returns>A <see cref="RecipeData"/></returns>
         public static RecipeData CreateRecipe(int craftAmount, params Ingredient[] ingredients)
         {
-            RecipeData recipe = new RecipeData();
-            recipe.craftAmount = craftAmount;
-            recipe.Ingredients = new List<Ingredient>(ingredients);
+            RecipeData recipe = new RecipeData
+            {
+                craftAmount = craftAmount,
+                Ingredients = new List<Ingredient>(ingredients)
+            };
             return recipe;
         }
     }

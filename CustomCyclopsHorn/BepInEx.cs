@@ -13,6 +13,8 @@ using Nautilus.Json;
 using Nautilus.Options.Attributes;
 using UnityEngine;
 using UnityEngineInternal.Input;
+using System.Diagnostics;
+using Nautilus.Options;
 
 namespace Ramune.CustomCyclopsHorn
 {
@@ -63,13 +65,13 @@ namespace Ramune.CustomCyclopsHorn
     [Menu("Custom Cyclops Horn")]
     public class Options : ConfigFile
     {
-        /*
+        
         [Button("Open sounds (mp3) folder")]
-        public void Open()
+        public void Open(ButtonClickedEventArgs _)
         {
             Process.Start(CustomCyclopsHorn.MP3Folder);
         }
-        */
+        
         [Keybind("Next sound key")]
         public KeyCode nextSound = KeyCode.Period;
 
