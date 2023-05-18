@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeveloperMode", "DeveloperM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableCoralMultiplier", "TableCoralMultiplier\TableCoralMultiplier.csproj", "{E8E6057F-C634-44AE-B498-8F1185FE1F7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModsLoaded", "ModsLoaded\ModsLoaded.csproj", "{E9AC2CB1-BBED-4F72-B56F-EF8993491C7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreIngots", "MoreIngots\MoreIngots.csproj", "{05BA009F-D576-4A77-95EA-51504701E622}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +107,14 @@ Global
 		{E8E6057F-C634-44AE-B498-8F1185FE1F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8E6057F-C634-44AE-B498-8F1185FE1F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8E6057F-C634-44AE-B498-8F1185FE1F7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9AC2CB1-BBED-4F72-B56F-EF8993491C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9AC2CB1-BBED-4F72-B56F-EF8993491C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9AC2CB1-BBED-4F72-B56F-EF8993491C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9AC2CB1-BBED-4F72-B56F-EF8993491C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05BA009F-D576-4A77-95EA-51504701E622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05BA009F-D576-4A77-95EA-51504701E622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05BA009F-D576-4A77-95EA-51504701E622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05BA009F-D576-4A77-95EA-51504701E622}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,13 +135,16 @@ Global
 		{FDCF208B-99E0-458D-A89E-2C267DCC5F31} = {DCE23348-1DD4-41C7-897B-57EEA760D888}
 		{FA86B712-BFA5-44BA-8383-9AF946061E7A} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
 		{2B87EA1B-74B1-43D3-866A-C07592B169D0} = {DCE23348-1DD4-41C7-897B-57EEA760D888}
-		{C14D5527-D426-4A68-BBB2-9B83AD8896D2} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
+		{C14D5527-D426-4A68-BBB2-9B83AD8896D2} = {DCE23348-1DD4-41C7-897B-57EEA760D888}
 		{E8E6057F-C634-44AE-B498-8F1185FE1F7A} = {DCE23348-1DD4-41C7-897B-57EEA760D888}
+		{E9AC2CB1-BBED-4F72-B56F-EF8993491C7A} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
+		{05BA009F-D576-4A77-95EA-51504701E622} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C92EE9F4-51B0-4E47-8021-0C968DB68EC0}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		RamuneLib\RamuneLib.projitems*{05ba009f-d576-4a77-95ea-51504701e622}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{07e75f7b-f846-45b0-a304-fae15ab52062}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{2b87ea1b-74b1-43d3-866a-c07592b169d0}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{2ce2accc-ce9f-4439-8a10-afb221925809}*SharedItemsImports = 4
@@ -143,6 +158,7 @@ Global
 		RamuneLib\RamuneLib.projitems*{b614f277-05f1-4137-9bf9-c455cd2c28ae}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{c14d5527-d426-4a68-bbb2-9b83ad8896d2}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{e8e6057f-c634-44ae-b498-8f1185fe1f7a}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{e9ac2cb1-bbed-4f72-b56f-ef8993491c7a}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{fa86b712-bfa5-44ba-8383-9af946061e7a}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{fdcf208b-99e0-458d-a89e-2c267dcc5f31}*SharedItemsImports = 4
 	EndGlobalSection

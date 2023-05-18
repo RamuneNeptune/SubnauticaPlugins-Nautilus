@@ -7,8 +7,6 @@ using Nautilus.Options.Attributes;
 using Nautilus.Json;
 using RamuneLib;
 using Nautilus.Options;
-using UnityEngine.SceneManagement;
-using UnityEngine;
 
 namespace Ramune.EarlyIonBattery
 {
