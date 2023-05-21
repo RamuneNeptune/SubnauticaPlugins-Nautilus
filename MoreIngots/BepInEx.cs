@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Nautilus.Handlers;
 using Nautilus.Crafting;
 using static CraftData;
+using System;
 
 namespace Ramune.MoreIngots
 {
@@ -29,38 +30,43 @@ namespace Ramune.MoreIngots
             logger = Logger;
         }
 
-        public static List<TechType> packedTechTypes = new List<TechType>()
+        public static Dictionary<TechType, Tuple<string, string>> resources = new Dictionary<TechType, Tuple<string, string>>()
         {
-            TechType.Gold,
-            TechType.Silver,
-            TechType.Quartz,
-            TechType.Titanium,
-            TechType.Copper,
-            TechType.UraniniteCrystal,
-            TechType.AluminumOxide,
-            TechType.Diamond,
+            { TechType.Gold, Tuple.Create("Gold", "Au. Compressed gold") },
+            { TechType.Silver, Tuple.Create("Silver", "Ag. Compressed silver") },
+            { TechType.Quartz, Tuple.Create("Quartz", "SiO2. Compressed quartz") },
+            { TechType.Titanium, Tuple.Create("Titanium", "Ti. Compressed titanium") },
+            { TechType.Copper, Tuple.Create("Copper", "Cu. Compressed copper") },
+            { TechType.UraniniteCrystal, Tuple.Create("Uraninite Crystal", "UO2. Compressed uraninite crystal") },
+            { TechType.AluminumOxide, Tuple.Create("Ruby", "Al2O3. Compressed ruby") },
+            { TechType.Diamond, Tuple.Create("Diamond", "C. Compressed diamond") },
         };
 
         public void Items()
         {
             CraftTreeHandler.AddTabNode(CraftTree.Type.Fabricator, "Packed", "Packed resources", Utilities.GetSprite(TechType.Peeper), "Resources");
             CraftTreeHandler.AddTabNode(CraftTree.Type.Fabricator, "Unpacked", "Unpacked resources", Utilities.GetSprite(TechType.Bladderfish), "Resources");
-            foreach(var item in packedTechTypes) AddPacked(item.ToString(), item);
+            foreach(var item in resources) AddPacked(item.Value.Item1, item.Value.Item2, item.Key);
         }
 
-        public void AddPacked(string itemName, TechType itemCost)
+        public void AddPacked(string b, string e, TechType a)
         {
-            var name = "Packed " + itemName.ToString();
-            var item = EnumHandler.AddEntry<TechType>("Packed" + itemName)
-                .WithPdaInfo(name, "A bunch of compressed " + name, unlockAtStart: false)
+            //
+        }
+
+        /*
+        public void AddPacked(string itemName, string itemDescription, TechType itemForCraft)
+        {
+            var item = EnumHandler.AddEntry<TechType>(itemName + "Ingot")
+                .WithPdaInfo(itemName, itemDescription, unlockAtStart: false)
                 .WithIcon(Utilities.GetSprite(itemCost));
+
             CraftDataHandler.SetRecipeData(item, Recipe(itemCost));
             AddUnpacked(itemName, item, itemCost);
         }
 
         public void AddUnpacked(string itemName, TechType itemCost, TechType linkedItems)
         {
-            var name = "Unpacked " + itemName.ToString();
             var item = EnumHandler.AddEntry<TechType>("Unpacked" + itemName)
                 .WithPdaInfo(name, "A bunch of compressed " + name, unlockAtStart: false)
                 .WithIcon(Utilities.GetSprite(linkedItems));
@@ -68,6 +74,7 @@ namespace Ramune.MoreIngots
             CraftTreeHandler.AddCraftingNode(CraftTree.Type.Fabricator, item, "Resources", "Unpacked");
             CraftTreeHandler.AddCraftingNode(CraftTree.Type.Fabricator, itemCost, "Resources", "Packed");
         }
+        */
 
         public RecipeData Recipe(TechType ingredient, TechType linked = TechType.None)
         {

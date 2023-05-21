@@ -13,15 +13,15 @@ namespace Ramune.HeadlampChip
         public static PrefabInfo info;
         public static void Patch()
         {
-            RecipeData recipe = CreateRecipe(3,
-                new Ingredient(TechType.Lithium, 2),
-                new Ingredient(TechType.Glass, 1),
+            RecipeData recipe = CreateRecipe(1,
                 new Ingredient(TechType.Battery, 1),
+                new Ingredient(TechType.Glass, 1),
+                new Ingredient(TechType.Lithium, 2),
                 new Ingredient(TechType.AdvancedWiringKit, 1));
 
             PrefabInfo HeadlampChipInfo = PrefabInfo
                 .WithTechType("HeadlampChip", "Headlamp Chip", "RGB capable headlamp chip implanted into the brain.")
-                .WithIcon(GetSprite(TechType.Marki1))
+                .WithIcon(GetSprite("HeadlampChip"))
                 .WithSizeInInventory(new Vector2int(1, 1));
             info = HeadlampChipInfo;
 
@@ -32,10 +32,11 @@ namespace Ramune.HeadlampChip
             };
 
             HeadlampChip.SetGameObject(clone);
+            HeadlampChip.AddGadget(new ScanningGadget(HeadlampChip, TechType.Flashlight).WithPdaGroupCategory(TechGroup.Personal, TechCategory.Equipment));
             HeadlampChip.SetEquipment(EquipmentType.Chip); 
             HeadlampChip.SetRecipe(recipe)
                 .WithFabricatorType(CraftTree.Type.Fabricator) 
-                .WithStepsToFabricatorTab("Resources", "Electronics");
+                .WithStepsToFabricatorTab("Personal", "Equipment");
 
             HeadlampChip.Register();
         }

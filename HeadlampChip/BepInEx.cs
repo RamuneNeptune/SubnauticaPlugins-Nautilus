@@ -8,6 +8,7 @@ using Nautilus.Options.Attributes;
 using Nautilus.Options;
 using UnityEngine;
 using Nautilus.Json;
+using UWE;
 
 namespace Ramune.HeadlampChip
 {
