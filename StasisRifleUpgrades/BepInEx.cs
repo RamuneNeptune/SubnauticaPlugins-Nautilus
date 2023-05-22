@@ -4,6 +4,8 @@ using BepInEx;
 using HarmonyLib;
 using RamuneLib;
 using Ramune.StasisRifleUpgrades.Items;
+using UnityEngine;
+using Sentry;
 
 namespace Ramune.StasisRifleUpgrades
 {

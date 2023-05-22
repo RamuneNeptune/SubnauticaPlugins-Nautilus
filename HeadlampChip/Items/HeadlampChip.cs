@@ -28,11 +28,11 @@ namespace Ramune.HeadlampChip
             CustomPrefab HeadlampChip = new CustomPrefab(HeadlampChipInfo);
             PrefabTemplate clone = new CloneTemplate(HeadlampChipInfo, TechType.MapRoomHUDChip)
             {
-                ModifyPrefab = prefab => prefab.EnsureComponent<TakeDamageOnCollide>()
+                //ModifyPrefab = prefab => prefab.EnsureComponent<TakeDamageOnCollide>()
             };
 
             HeadlampChip.SetGameObject(clone);
-            HeadlampChip.AddGadget(new ScanningGadget(HeadlampChip, TechType.Flashlight).WithPdaGroupCategory(TechGroup.Personal, TechCategory.Equipment));
+            HeadlampChip.AddGadget(new ScanningGadget(HeadlampChip, TechType.Compass).WithPdaGroupCategory(TechGroup.Personal, TechCategory.Equipment));
             HeadlampChip.SetEquipment(EquipmentType.Chip); 
             HeadlampChip.SetRecipe(recipe)
                 .WithFabricatorType(CraftTree.Type.Fabricator) 

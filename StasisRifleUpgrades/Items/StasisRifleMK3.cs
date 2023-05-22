@@ -4,6 +4,7 @@ using Nautilus.Assets;
 using Nautilus.Assets.Gadgets;
 using Nautilus.Assets.PrefabTemplates;
 using RamuneLib;
+using UnityEngine;
 
 namespace Ramune.StasisRifleUpgrades.Items
 {
@@ -12,13 +13,33 @@ namespace Ramune.StasisRifleUpgrades.Items
         public static PrefabInfo Info;
         public static void Patch()
         {
-            Info = Utilities.CreatePrefabInfo("StasisRifleMK3", "Stasis rifle MK3", "A mega stasis rifle cool wow yeah", Utilities.GetSprite("MK3_"), 2, 2);
+            Info = Utilities.CreatePrefabInfo("StasisRifleMK3", "Stasis rifle MK3", "A mega stasis rifle cool wow yeah", Utilities.GetSprite("MK3"), 2, 2);
             var prefab = new CustomPrefab(Info);
             var clone = new CloneTemplate(Info, TechType.StasisRifle)
             {
                 ModifyPrefab = go =>
                 {
-                    var stasis = go.EnsureComponent<StasisRifle>();
+                    var renderers = go.GetComponentsInChildren<SkinnedMeshRenderer>(true);
+                    foreach(var r in renderers)
+                    {
+                        foreach(var m in r.materials)
+                        {
+                            if(m.name.StartsWith("stasis")) m.mainTexture = Utilities.GetTexture("Stasis");
+
+                            if(m.name.StartsWith("UI"))
+                            {
+                                m.SetTexture("_MainTex", Utilities.GetTexture("MK3_Off"));
+                                m.SetTexture("_BarTex", Utilities.GetTexture("MK3_On"));
+                            }
+
+                            if(m.name.StartsWith("battery"))
+                            {
+                                m.SetTexture("_Illum", Utilities.GetTexture("Illum"));
+                                m.SetColor("_GlowColor", Color.red);
+                                m.SetFloat("_GlowStrength", 4f);
+                            }
+                        }
+                    }
                 }
             };
 
