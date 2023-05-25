@@ -43,13 +43,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableCoralMultiplier", "Tab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModsLoaded", "ModsLoaded\ModsLoaded.csproj", "{E9AC2CB1-BBED-4F72-B56F-EF8993491C7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreIngots", "MoreIngots\MoreIngots.csproj", "{05BA009F-D576-4A77-95EA-51504701E622}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{45839E69-0DD0-4A54-86EB-7C1B925A9A66}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BepInEx-Installer", "BepInEx-Installer\BepInEx-Installer.csproj", "{319ECF05-33C1-4F30-B943-479DAFAA9439}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StasisRifleUpgrades", "StasisRifleUpgrades\StasisRifleUpgrades.csproj", "{605B0915-3458-4FD5-99BE-19791D94D8BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleBayBeacon", "VehicleBayBeacon\VehicleBayBeacon.csproj", "{95B50703-6E53-4F20-BE82-C0F7C10ADF44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IonThermalPlant", "IonThermalPlant\IonThermalPlant.csproj", "{D2DF8C83-C180-402B-8009-094BE6CA2C4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,10 +119,6 @@ Global
 		{E9AC2CB1-BBED-4F72-B56F-EF8993491C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9AC2CB1-BBED-4F72-B56F-EF8993491C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9AC2CB1-BBED-4F72-B56F-EF8993491C7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{05BA009F-D576-4A77-95EA-51504701E622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05BA009F-D576-4A77-95EA-51504701E622}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05BA009F-D576-4A77-95EA-51504701E622}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05BA009F-D576-4A77-95EA-51504701E622}.Release|Any CPU.Build.0 = Release|Any CPU
 		{319ECF05-33C1-4F30-B943-479DAFAA9439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{319ECF05-33C1-4F30-B943-479DAFAA9439}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{319ECF05-33C1-4F30-B943-479DAFAA9439}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -129,6 +127,14 @@ Global
 		{605B0915-3458-4FD5-99BE-19791D94D8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{605B0915-3458-4FD5-99BE-19791D94D8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{605B0915-3458-4FD5-99BE-19791D94D8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B50703-6E53-4F20-BE82-C0F7C10ADF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B50703-6E53-4F20-BE82-C0F7C10ADF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B50703-6E53-4F20-BE82-C0F7C10ADF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B50703-6E53-4F20-BE82-C0F7C10ADF44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2DF8C83-C180-402B-8009-094BE6CA2C4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2DF8C83-C180-402B-8009-094BE6CA2C4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2DF8C83-C180-402B-8009-094BE6CA2C4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2DF8C83-C180-402B-8009-094BE6CA2C4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,15 +158,15 @@ Global
 		{C14D5527-D426-4A68-BBB2-9B83AD8896D2} = {DCE23348-1DD4-41C7-897B-57EEA760D888}
 		{E8E6057F-C634-44AE-B498-8F1185FE1F7A} = {DCE23348-1DD4-41C7-897B-57EEA760D888}
 		{E9AC2CB1-BBED-4F72-B56F-EF8993491C7A} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
-		{05BA009F-D576-4A77-95EA-51504701E622} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
 		{319ECF05-33C1-4F30-B943-479DAFAA9439} = {45839E69-0DD0-4A54-86EB-7C1B925A9A66}
 		{605B0915-3458-4FD5-99BE-19791D94D8BA} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
+		{95B50703-6E53-4F20-BE82-C0F7C10ADF44} = {41A9DED5-894A-4326-A333-4627EE9DEB17}
+		{D2DF8C83-C180-402B-8009-094BE6CA2C4A} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C92EE9F4-51B0-4E47-8021-0C968DB68EC0}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		RamuneLib\RamuneLib.projitems*{05ba009f-d576-4a77-95ea-51504701e622}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{07e75f7b-f846-45b0-a304-fae15ab52062}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{2b87ea1b-74b1-43d3-866a-c07592b169d0}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{2ce2accc-ce9f-4439-8a10-afb221925809}*SharedItemsImports = 4
@@ -172,8 +178,10 @@ Global
 		RamuneLib\RamuneLib.projitems*{7b162f4d-c0c7-41ec-a55d-ab785571f0da}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{7d3a5d29-406d-44b5-a8ed-40f6db298d1a}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{8ca6c8f0-5467-4641-86ab-f6f9b89e090b}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{95b50703-6e53-4f20-be82-c0f7c10adf44}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{b614f277-05f1-4137-9bf9-c455cd2c28ae}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{c14d5527-d426-4a68-bbb2-9b83ad8896d2}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{d2df8c83-c180-402b-8009-094be6ca2c4a}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{e8e6057f-c634-44ae-b498-8f1185fe1f7a}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{e9ac2cb1-bbed-4f72-b56f-ef8993491c7a}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{fa86b712-bfa5-44ba-8383-9af946061e7a}*SharedItemsImports = 4

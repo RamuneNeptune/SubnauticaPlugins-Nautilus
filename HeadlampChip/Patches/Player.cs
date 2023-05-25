@@ -1,5 +1,6 @@
 ﻿
 using HarmonyLib;
+using RamuneLib;
 
 namespace Ramune.HeadlampChip
 {
@@ -9,6 +10,8 @@ namespace Ramune.HeadlampChip
         public static void Postfix(Player __instance)
         {
             __instance.gameObject.EnsureComponent<HeadlampChipMono>();
+            Utilities.Log(Colors.Amber, "HeadlampChipMono ensured on player!");
+            HeadlampChip.logger.LogFatal("HeadlampChipMono ensured on player!");
         }
     }
 }

@@ -5,6 +5,8 @@ using Nautilus.Assets.Gadgets;
 using Nautilus.Assets.PrefabTemplates;
 using RamuneLib;
 using UnityEngine;
+using Nautilus.Utility;
+using Nautilus.Handlers;
 
 namespace Ramune.StasisRifleUpgrades.Items
 {
@@ -58,4 +60,21 @@ namespace Ramune.StasisRifleUpgrades.Items
             prefab.Register();
         }
     }
+    /*
+    public class MK3Handler : StasisRifle
+    {
+        public override string GetCustomUseText()
+        {
+            Utilities.Log(Colors.Purple, "Switch to instant kill mode");
+
+            LanguageHandler.SetLanguageLine("InstantKillMode", "Switch to instant kill ({0})");
+
+            string text = LanguageCache.GetButtonFormat("InstantKillMode", GameInput.Button.AltTool);
+
+            return text;
+        }
+
+        public override string animToolName => "stasisrifle";
+    }
+    */
 }
