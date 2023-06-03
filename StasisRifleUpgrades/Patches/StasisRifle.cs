@@ -1,6 +1,4 @@
-﻿using MK1 = Ramune.StasisRifleUpgrades.Items.StasisRifleMK1;
-using MK2 = Ramune.StasisRifleUpgrades.Items.StasisRifleMK2;
-using MK3 = Ramune.StasisRifleUpgrades.Items.StasisRifleMK3;
+﻿
 using static Ramune.StasisRifleUpgrades.Patches.Helpers;
 using System.Collections.Generic;
 using System.Collections;
@@ -23,6 +21,7 @@ namespace Ramune.StasisRifleUpgrades.Patches
         public static Color ColorMK3 = new Color(1f, 0f, 0f);
         public static float timeLastExploded;
         public static float cooldown = 15f;
+        public static GameObject explosion;
 
         public static Dictionary<RifleType, (float, float, Color)> values = new Dictionary<RifleType, (float, float, Color)>()
         {
@@ -30,7 +29,6 @@ namespace Ramune.StasisRifleUpgrades.Patches
             { RifleType.MK2, (500f,  1.35f, ColorMK2) },
             { RifleType.MK3, (1000f, 1.65f, ColorMK3) },
         };
-        public static GameObject explosion;
 
 
         public static void SetParticles(bool isRifle, Color color, StasisRifle rifle = null)
@@ -98,9 +96,9 @@ namespace Ramune.StasisRifleUpgrades.Patches
             var rifle = __instance.pickupable.GetTechType();
             if(__instance.chargeAmount <= 0f) return;
             if(rifle == TechType.StasisRifle) SetParticles(true, ColorDefault, __instance); else
-            if(rifle == MK1.Info.TechType) SetParticles(true, ColorMK1, __instance); else
-            if(rifle == MK2.Info.TechType) SetParticles(true, ColorMK2, __instance); else
-            if(rifle == MK3.Info.TechType) SetParticles(true, ColorMK3, __instance);
+            if(rifle == StasisRifleUpgrades.InfoMK1.TechType) SetParticles(true, ColorMK1, __instance); else
+            if(rifle == StasisRifleUpgrades.InfoMK2.TechType) SetParticles(true, ColorMK2, __instance); else
+            if(rifle == StasisRifleUpgrades.InfoMK3.TechType) SetParticles(true, ColorMK3, __instance);
             return;
         }
 
@@ -118,19 +116,19 @@ namespace Ramune.StasisRifleUpgrades.Patches
                 CoroutineHost.StartCoroutine(StasisSphereStuff(ColorDefault, false));
                 return true;
             };
-            if(rifle == MK1.Info.TechType)
+            if(rifle == StasisRifleUpgrades.InfoMK1.TechType)
             {
                 Fire(__instance, values[RifleType.MK1].Item1, values[RifleType.MK1].Item2, values[RifleType.MK1].Item3);
                 CoroutineHost.StartCoroutine(StasisSphereStuff(values[RifleType.MK1].Item3, false));
             }
             else
-            if(rifle == MK2.Info.TechType)
+            if(rifle == StasisRifleUpgrades.InfoMK2.TechType)
             {
                 Fire(__instance, values[RifleType.MK2].Item1, values[RifleType.MK2].Item2, values[RifleType.MK2].Item3); 
                 CoroutineHost.StartCoroutine(StasisSphereStuff(values[RifleType.MK2].Item3, false));
             }
             else
-            if(rifle == MK3.Info.TechType)
+            if(rifle == StasisRifleUpgrades.InfoMK3.TechType)
             {
                 Fire(__instance, values[RifleType.MK3].Item1, values[RifleType.MK3].Item2, values[RifleType.MK3].Item3);
                 CoroutineHost.StartCoroutine(StasisSphereStuff(values[RifleType.MK3].Item3, true));

@@ -41,17 +41,11 @@ namespace Ramune.HeadlampChip
             light.shape = LightShape.Cone;
             light.shadows = LightShadows.Hard;
             InvokeRepeating(nameof(Refresh), 1f, 1f);
-
-            Utilities.Log(Colors.Amber, "HeadlampChip.Start()");
-            HeadlampChip.logger.LogFatal("HeadlampChip.Start()");
         }
 
         public void Update()
         {
-            Utilities.Log(Colors.Amber, "HeadlampChip.Update()");
-            HeadlampChip.logger.LogFatal("HeadlampChip.Update()");
-
-            if (!ChipEquipped() || player.isPiloting)
+            if(!ChipEquipped() || player.isPiloting)
             {
                 light.enabled = false;
                 return;
@@ -82,9 +76,6 @@ namespace Ramune.HeadlampChip
 
         public bool ChipEquipped()
         {
-            Utilities.Log(Colors.Amber, "HeadlampChip.ChipEquipped()");
-            HeadlampChip.logger.LogFatal("HeadlampChip.ChipEquipped()");
-
             Equipment equipment = Inventory.main?.equipment;
             if(equipment == null) return false;
 
@@ -101,9 +92,6 @@ namespace Ramune.HeadlampChip
 
         public void Refresh()
         {
-            Utilities.Log(Colors.Amber, "HeadlampChip.Refresh()");
-            HeadlampChip.logger.LogFatal("HeadlampChip.Refresh()");
-
             color.r = HeadlampChip.config.red;
             color.g = HeadlampChip.config.green;
             color.b = HeadlampChip.config.blue;
@@ -117,9 +105,6 @@ namespace Ramune.HeadlampChip
 
         public void Rainbow()
         {
-            Utilities.Log(Colors.Amber, "HeadlampChip.Rainbow()");
-            Utilities.Log(Colors.Amber, "HeadlampChip.Rainbow()");
-
             currentTime += Time.deltaTime / HeadlampChip.config.rainbowDuration;
             if(currentTime >= 1f) currentTime -= 1f;
             light.color = Color.HSVToRGB(currentTime, HeadlampChip.config.rainbowSaturation, HeadlampChip.config.rainbowOpacity);

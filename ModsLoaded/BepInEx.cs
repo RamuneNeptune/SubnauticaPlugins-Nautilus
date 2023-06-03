@@ -3,6 +3,12 @@ using BepInEx.Logging;
 using BepInEx;
 using HarmonyLib;
 using RamuneLib;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System.Collections.Generic;
+using System.Collections;
+using UWE;
 
 namespace Ramune.ModsLoaded
 {

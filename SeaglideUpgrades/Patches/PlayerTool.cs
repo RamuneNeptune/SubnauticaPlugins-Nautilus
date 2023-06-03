@@ -46,8 +46,8 @@ namespace Ramune.SeaglideUpgrades
             {
                 case("SeaGlide(Clone)"): // Seaglide
                     Utilities.Log(Colors.Blue, "Setting DEFAULT");
-                    controller.seaglideForwardMaxSpeed = 15f;
-                    controller.seaglideWaterAcceleration = 15f;
+                    controller.seaglideForwardMaxSpeed = 30f;
+                    controller.seaglideWaterAcceleration = 30f;
                     break;
                 case("SeaglideMK1(Clone)"): // MK1
                     Utilities.Log(Colors.Cyan, "Setting MK1");

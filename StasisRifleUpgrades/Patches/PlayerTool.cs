@@ -9,9 +9,9 @@ namespace Ramune.StasisRifleUpgrades.Patches
     {
         public static void Postfix(PlayerTool __instance, ref string __result)
         {
-            if(__instance.pickupable?.GetTechType() == StasisRifleMK1.Info.TechType) __result = "stasisrifle";
-            if(__instance.pickupable?.GetTechType() == StasisRifleMK2.Info.TechType) __result = "stasisrifle";
-            if(__instance.pickupable?.GetTechType() == StasisRifleMK3.Info.TechType) __result = "stasisrifle";
+            if(__instance.pickupable?.GetTechType() == StasisRifleUpgrades.InfoMK1.TechType) __result = "stasisrifle";
+            if(__instance.pickupable?.GetTechType() == StasisRifleUpgrades.InfoMK2.TechType) __result = "stasisrifle";
+            if(__instance.pickupable?.GetTechType() == StasisRifleUpgrades.InfoMK3.TechType) __result = "stasisrifle";
         }
     }
 }

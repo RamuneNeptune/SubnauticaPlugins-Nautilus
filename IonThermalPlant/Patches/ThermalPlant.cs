@@ -12,13 +12,11 @@ namespace Ramune.IonThermalPlant.Patches
         {
             if(__instance.name != "IonThermalPlant(Clone)") return; 
 
-            if(__instance.constructable.constructed && __instance.temperature > 25f)
-            {
-                float speed = 2f * DayNightCycle.main.dayNightSpeed;
-                float amount = 4f * speed * Mathf.Clamp01(Mathf.InverseLerp(25f, 100f, __instance.temperature));
-                float amountStored = 0f;
-                __instance.powerSource.AddEnergy(amount, out amountStored);
-            }
+            if(__instance.constructable.constructed && __instance.temperature < 25f) return;
+
+            float speed = 2f * DayNightCycle.main.dayNightSpeed;
+            float amount = 4f * speed * Mathf.Clamp01(Mathf.InverseLerp(25f, 100f, __instance.temperature));
+            __instance.powerSource.AddEnergy(amount, out float amountStored);
         }
     }
 }

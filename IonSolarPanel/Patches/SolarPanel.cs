@@ -3,7 +3,7 @@ using HarmonyLib;
 using RamuneLib;
 using UnityEngine;
 
-namespace Ramune.IonThermalPlant.Patches
+namespace Ramune.IonSolarPanel.Patches
 {
     [HarmonyPatch(typeof(SolarPanel))]
     public static class SolarPanelPatches

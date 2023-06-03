@@ -22,7 +22,6 @@ namespace Ramune.IonThermalPlant
             harmony.PatchAll();
             Main.FindPiracy();
             Items.IonThermalPlant.Patch();
-            Items.IonSolarPanel.Patch();
             Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
             logger = Logger;
         }

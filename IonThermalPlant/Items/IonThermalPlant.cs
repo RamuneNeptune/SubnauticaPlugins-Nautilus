@@ -1,5 +1,4 @@
-﻿
-using Nautilus.Assets;
+﻿using Nautilus.Assets;
 using Nautilus.Assets.Gadgets;
 using Nautilus.Assets.PrefabTemplates;
 using RamuneLib;
@@ -12,14 +11,14 @@ namespace Ramune.IonThermalPlant.Items
         public static PrefabInfo Info;
         public static void Patch()
         {
-            Info = Utilities.CreatePrefabInfo("IonThermalPlant", "Ion thermal plant", "Procudes power from heat", SpriteManager.Get(TechType.ThermalPlant), 1, 1);
+            Info = Utilities.CreatePrefabInfo("IonThermalPlant", "Ion thermal plant", "Procudes power from heat", Utilities.GetSprite("IonThermalPlantSprite"), 1, 1);
 
             var clone = new CloneTemplate(Info, TechType.ThermalPlant)
             {
                 ModifyPrefab = go =>
                 {
                     var renderers = go.GetComponentsInChildren<MeshRenderer>(true);
-                    foreach(var r in renderers)
+                    foreach (var r in renderers)
                     {
                         r.material.mainTexture = Utilities.GetTexture("IonThermalPlant");
                         r.material.SetTexture("_SpecTex", Utilities.GetTexture("IonThermalPlant"));
