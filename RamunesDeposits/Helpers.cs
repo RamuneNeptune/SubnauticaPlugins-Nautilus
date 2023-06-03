@@ -6,6 +6,7 @@ using Nautilus.Assets;
 using Nautilus.Assets.Gadgets;
 using Nautilus.Assets.PrefabTemplates;
 using Nautilus.Extensions;
+using Nautilus.Handlers;
 using RamuneLib;
 using UnityEngine;
 using UnityEngine.Yoga;
@@ -35,7 +36,7 @@ namespace Ramune.RamunesOutcrops
         }
 
 
-        public static void CreateOutcrop(string id, string name, string description, TechType outcropToClone, BiomeData[] biomeData)
+        public static TechType CreateOutcrop(string id, string name, string description, TechType outcropToClone, BiomeData[] biomeData, List<BreakableResource.RandomPrefab> itemData)
         {
             var info = Utilities.CreatePrefabInfo(id, name, description, Utilities.GetSprite(id + "Sprite"), 1, 1);
             var prefab = new CustomPrefab(info);
@@ -49,13 +50,21 @@ namespace Ramune.RamunesOutcrops
                         m.mainTexture = Utilities.GetTexture(id + "Texture");
                         m.SetTexture("_SpecTex", Utilities.GetTexture(id + "Texture"));
                     }
+
+                    var breakable = go.GetComponent<BreakableResource>();
+                    breakable.defaultPrefabReference = itemData.Last().prefabReference;
+                    breakable.defaultPrefabTechType = itemData.Last().prefabTechType;
+                    breakable.breakText = $"Break {name}";
+                    breakable.prefabList = itemData;
                 }
             };
             prefab.SetPdaGroupCategory(TechGroup.Resources, TechCategory.BasicMaterials);
             prefab.SetGameObject(clone);
             prefab.SetSpawns(biomeData);
             prefab.Register();
-            RamunesOutcrops.logger.LogDebug($"'{id}' is finished & registered");
+
+            RamunesOutcrops.logger.LogDebug($"'{id}' is registered");
+            return prefab.Info.TechType;
         }
 
 

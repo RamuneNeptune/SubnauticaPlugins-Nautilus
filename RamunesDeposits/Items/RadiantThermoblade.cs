@@ -9,6 +9,7 @@ using Ramune.RamunesOutcrops.Fabricators;
 using System.Collections;
 using UWE;
 using UnityEngine.XR;
+using Nautilus.Extensions;
 
 namespace Ramune.RamunesOutcrops.Items
 {
@@ -16,27 +17,8 @@ namespace Ramune.RamunesOutcrops.Items
     {
         public void Start()
         {
-            var hb = gameObject.GetComponent<HeatBlade>();
-            idleClip = hb.idleClip;
-            fxControl = hb.fxControl;
-            attackSound = hb.attackSound;
-            surfaceMissSound = hb.surfaceMissSound;
-            underwaterMissSound = hb.underwaterMissSound;
-            vfxEventType = hb.vfxEventType;
-            bleederDamage = hb.bleederDamage + 20f;
-            drawSound = hb.drawSound;
-            drawTime = hb.drawTime;
-            dropTime = hb.dropTime;
-            hasBashAnimation = hb.hasBashAnimation;
-            hitBleederSound = hb.hitBleederSound;
-            holsterTime = hb.holsterTime;
-            mainCollider = hb.mainCollider;
-            pickupable = hb.pickupable;
-            savedIkAimRightArm = hb.savedIkAimRightArm;
-            usingPlayer = hb.usingPlayer;
             attackDist = 100f;
             damage = 10000f;
-            Destroy(hb);
         }
 
         public override void OnToolUseAnim(GUIHand hand)
@@ -63,13 +45,13 @@ namespace Ramune.RamunesOutcrops.Items
                 new Ingredient(TechType.HeatBlade, 1),
                 new Ingredient(RadiantCrystal.Info.TechType, 2)))
                 .WithFabricatorType(RadiantFabricator.CraftTreeType)
+                .WithStepsToFabricatorTab("Tools")
                 .WithCraftingTime(0.5f);
 
             var clone = new CloneTemplate(Info, TechType.HeatBlade)
             {
                 ModifyPrefab = go =>
                 {
-                    var knife = go.EnsureComponent<RadiantThermobladeMono>();
                     var renderer = go.GetComponentInChildren<MeshRenderer>(true);
                     foreach(var m in renderer.materials)
                     {
@@ -78,6 +60,11 @@ namespace Ramune.RamunesOutcrops.Items
                         m.SetTexture("_Illum", RadiantBladeIllumTexture);
                         m.SetColor("_GlowColor", new Color(0.67f, 0.1f, 0.85f, 0.4f));
                     }
+
+                    var heatblade = go.GetComponent<HeatBlade>();
+                    var radiantblade = go.EnsureComponent<RadiantThermobladeMono>().CopyComponent(heatblade);
+
+                    Object.DestroyImmediate(heatblade);
                 }
             };
             prefab.SetGameObject(clone);

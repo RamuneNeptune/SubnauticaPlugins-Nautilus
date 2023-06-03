@@ -87,8 +87,8 @@ namespace RamuneLib
         public static string Blue = "<color=#0048ff>";
         public static string Purple = "<color=#7300ff>";
         public static string Pink = "<color=#ff00ff>";
-        public static string White = "<color=ffffff>";
+        public static string White = "<color=#ffffff>";
         public static string Grey = "<color=>";
-        public static string Black = "<color=000000>";
+        public static string Black = "<color=#000000>";
     }
 }

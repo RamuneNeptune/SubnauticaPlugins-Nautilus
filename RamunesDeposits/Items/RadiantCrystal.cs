@@ -2,6 +2,7 @@
 using Nautilus.Assets;
 using Nautilus.Assets.Gadgets;
 using Nautilus.Assets.PrefabTemplates;
+using Nautilus.Utility;
 using RamuneLib;
 using UnityEngine;
 
@@ -31,13 +32,14 @@ namespace Ramune.RamunesOutcrops.Items
                             m.SetTexture("_Illum", Utilities.GetTexture("RadiantCrystalTexture"));
                             m.SetColor("_Illum", new Color(0.67f, 0.1f, 0.85f));
                             m.color = new Color(0.67f, 0.1f, 0.85f);
+                            MaterialUtils.SetMaterialTransparent(m, true);
                         }
                     }
                 }
             };
             prefab.SetPdaGroupCategory(TechGroup.Resources, TechCategory.BasicMaterials);
             prefab.SetGameObject(clone);
-            prefab.SetSpawns(Helpers.CreateBiomeData(Resources.RadiantCrystal));
+            prefab.SetSpawns(Helpers.CreateBiomeData(Resources.RadiantCrystalBiomes));
             prefab.Register();
             RamunesOutcrops.logger.LogDebug($"'RadiantCrystal' is finished & registered");
         }

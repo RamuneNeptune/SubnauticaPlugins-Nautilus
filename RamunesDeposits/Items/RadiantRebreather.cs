@@ -28,6 +28,7 @@ namespace Ramune.RamunesOutcrops.Items
                 new Ingredient(TechType.Rebreather, 1),
                 new Ingredient(RadiantCrystal.Info.TechType, 2)))
                 .WithFabricatorType(RadiantFabricator.CraftTreeType)
+                .WithStepsToFabricatorTab("Equipment")
                 .WithCraftingTime(0.5f);
             prefab.Register();
         }

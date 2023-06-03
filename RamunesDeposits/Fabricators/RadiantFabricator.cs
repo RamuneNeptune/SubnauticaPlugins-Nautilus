@@ -11,6 +11,7 @@ using static CraftData;
 using RamuneLib;
 using Nautilus.Assets.Gadgets;
 using UnityEngine;
+using Nautilus.Handlers;
 
 namespace Ramune.RamunesOutcrops.Fabricators
 {
@@ -37,6 +38,11 @@ namespace Ramune.RamunesOutcrops.Fabricators
             prefab.SetRecipe(new RecipeData(new Ingredient(TechType.Titanium, 2), new Ingredient(TechType.Quartz, 2), new Ingredient(TechType.JeweledDiskPiece, 1)));
             prefab.SetPdaGroupCategory(TechGroup.InteriorModules, TechCategory.InteriorModule);
             prefab.Register();
+
+            CraftTreeHandler.AddTabNode(fabTreeType, "Tools", "Tools", Utilities.GetSprite("RadiantFabricatorToolsTabSprite"));
+            CraftTreeHandler.AddTabNode(fabTreeType, "Equipment", "Equipment", Utilities.GetSprite("RadiantFabricatorEquipmentTabSprite"));
+            CraftTreeHandler.AddTabNode(fabTreeType, "Electronics", "Electronics", Utilities.GetSprite("RadiantFabricatorElectronicsTabSprite"));
+            
             CraftTreeType = fabTreeType;
         }
     }

@@ -352,6 +352,7 @@
     <Compile Include="Items\RadiantSeaglide.cs" />
     <Compile Include="Items\RadiantThermoblade.cs" />
     <Compile Include="Items\RadiantTank.cs" />
+    <Compile Include="Patches\BreakableResource.cs" />
     <Compile Include="Patches\Player.cs" />
     <Compile Include="Patches\PlayerTool.cs" />
     <Compile Include="Items\RadiantFins.cs" />

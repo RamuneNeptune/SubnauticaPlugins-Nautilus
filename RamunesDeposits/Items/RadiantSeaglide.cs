@@ -57,6 +57,7 @@ namespace Ramune.RamunesOutcrops.Items
                 new Ingredient(TechType.Seaglide, 1),
                 new Ingredient(RadiantCrystal.Info.TechType, 2)))
                 .WithFabricatorType(RadiantFabricator.CraftTreeType)
+                .WithStepsToFabricatorTab("Tools")
                 .WithCraftingTime(5.5f);
             prefab.Register();
         }

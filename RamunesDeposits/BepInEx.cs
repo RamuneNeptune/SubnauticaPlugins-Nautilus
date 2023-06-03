@@ -7,6 +7,9 @@ using BepInEx;
 using UnityEngine;
 using Ramune.RamunesOutcrops.Items;
 using Ramune.RamunesOutcrops.Fabricators;
+using UnityEngine.AddressableAssets;
+using UWE;
+using System;
 
 namespace Ramune.RamunesOutcrops
 {
@@ -19,6 +22,11 @@ namespace Ramune.RamunesOutcrops
         private const string myGUID = "com.ramune.RamunesOutcrops";
         private const string pluginName = "Ramunes Outcrops";
         private const string versionString = "1.0.0";
+
+        public static TechType LodestoneOutcrop;
+        public static TechType GeyseriteOutcrop;
+        public static TechType SiltstoneOutcrop;
+        public static TechType SerpentiteOutcrop;
 
         public void Awake()
         {
@@ -35,18 +43,11 @@ namespace Ramune.RamunesOutcrops
             Items.RadiantSeaglide.Patch();
             Items.RadiantRebreather.Patch();
 
-            logger.LogDebug("'LodestoneOutcrop' is being created with set BiomeData..");
-            Helpers.CreateOutcrop("LodestoneOutcrop", "Lodestone outcrop", "A lodestone outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(LodestoneOutcrop));
+            LodestoneOutcrop = Helpers.CreateOutcrop("LodestoneOutcrop", "Lodestone outcrop", "A lodestone outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(LodestoneOutcropBiomes), LodestoneOutcropItems);
+            GeyseriteOutcrop = Helpers.CreateOutcrop("GeyseriteOutcrop", "Geyserite outcrop", "A geyserite outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(GeyseriteOutcropBiomes), GeyseriteOutcropItems);
+            SiltstoneOutcrop = Helpers.CreateOutcrop("SiltstoneOutcrop", "Siltstone outcrop", "A siltstone outcrop.", TechType.LimestoneChunk, Helpers.CreateBiomeData(SiltstoneOutcropBiomes), SiltstoneOutcropItems);
+            SerpentiteOutcrop = Helpers.CreateOutcrop("SerpentiteOutcrop", "Serpentite outcrop", "A serpentite outcrop.", TechType.SandstoneChunk, Helpers.CreateBiomeData(SerpentiteOutcropBiomes), SerpentiteOutcropItems);
 
-            logger.LogDebug("'GeyseriteOutcrop' is being created with set BiomeData..");
-            Helpers.CreateOutcrop("GeyseriteOutcrop", "Geyserite outcrop", "A geyserite outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(GeyseriteOutcrop));
-
-            logger.LogDebug("'SiltstoneOutcrop' is being created with set BiomeData..");
-            Helpers.CreateOutcrop("SiltstoneOutcrop", "Siltstone outcrop", "A siltstone outcrop.", TechType.LimestoneChunk, Helpers.CreateBiomeData(SiltstoneOutcrop));
-
-            logger.LogDebug("'SerpentiteOutcrop' is being created with set BiomeData..");
-            Helpers.CreateOutcrop("SerpentiteOutcrop", "Serpentite outcrop", "A serpentite outcrop.", TechType.SandstoneChunk, Helpers.CreateBiomeData(SerpentiniteOutcrop));            
-            
             Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
         }
     }

@@ -32,16 +32,17 @@ namespace Ramune.RamunesOutcrops.Items
                         m.SetTexture("_Illum", Utilities.GetTexture("RadiantCubeTexture"));
                         m.SetColor("_GlowColor", new Color(0.67f, 0.1f, 0.85f, 0.4f));
                     }
-                    go.EnsureComponent<Battery>()._capacity = 300;
+                    go.EnsureComponent<Battery>()._capacity = 300000;
                 }
             };
 
             prefab.SetUnlock(TechType.PrecursorIonCrystal);
-            prefab.SetEquipment(EquipmentType.BatteryCharger).WithQuickSlotType(QuickSlotType.Instant);
+            prefab.SetEquipment(EquipmentType.None).WithQuickSlotType(QuickSlotType.Instant);
             prefab.SetRecipe(Utilities.CreateRecipe(1,
                 new Ingredient(TechType.PrecursorIonCrystal, 1),
                 new Ingredient(RadiantCrystal.Info.TechType, 1)))
                 .WithFabricatorType(RadiantFabricator.CraftTreeType)
+                .WithStepsToFabricatorTab("Electronics")
                 .WithCraftingTime(0.5f);
             prefab.SetGameObject(clone);
             prefab.Register();
