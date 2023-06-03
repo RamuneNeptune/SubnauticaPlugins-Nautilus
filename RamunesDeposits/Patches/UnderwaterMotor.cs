@@ -13,7 +13,7 @@ namespace Ramune.RamunesOutcrops.Patches
     {
         public static void Postfix(UnderwaterMotor __instance, ref float __result)
         {
-            if(Inventory.Get().equipment.GetCount(RadiantFins.Info.TechType) > 0) __result += 2.5f * __instance.currentPlayerSpeedMultipler;
+            if(Inventory.Get().equipment.GetCount(RadiantFins.Info.TechType) > 0) __result += 5f * __instance.currentPlayerSpeedMultipler;
         }
     }
 }

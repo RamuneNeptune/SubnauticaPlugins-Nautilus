@@ -14,52 +14,34 @@ namespace Ramune.RamunesOutcrops.Items
 {
     public class RadiantThermobladeMono : HeatBlade
     {
-        public VFXController fxControl;
-        public FMOD_CustomEmitter idleClip;
-
         public void Start()
         {
-            CoroutineHost.StartCoroutine(FetchFX());
+            var hb = gameObject.GetComponent<HeatBlade>();
+            idleClip = hb.idleClip;
+            fxControl = hb.fxControl;
+            attackSound = hb.attackSound;
+            surfaceMissSound = hb.surfaceMissSound;
+            underwaterMissSound = hb.underwaterMissSound;
+            vfxEventType = hb.vfxEventType;
+            bleederDamage = hb.bleederDamage + 20f;
+            drawSound = hb.drawSound;
+            drawTime = hb.drawTime;
+            dropTime = hb.dropTime;
+            hasBashAnimation = hb.hasBashAnimation;
+            hitBleederSound = hb.hitBleederSound;
+            holsterTime = hb.holsterTime;
+            mainCollider = hb.mainCollider;
+            pickupable = hb.pickupable;
+            savedIkAimRightArm = hb.savedIkAimRightArm;
+            usingPlayer = hb.usingPlayer;
             attackDist = 100f;
             damage = 10000f;
-        }
-
-        public IEnumerator FetchFX()
-        {
-            var task = GetPrefabForTechTypeAsync(TechType.HeatBlade);
-            yield return task;
-
-            var result = task.GetResult();
-            var hb = result.GetComponent<HeatBlade>();
-
-            fxControl = hb.fxControl;
-            idleClip = hb.idleClip;
-
-            yield break;
-        }
-
-        public override int GetUsesPerHit()
-        {
-            return 1;
-        }
-
-        public override void OnDraw(Player p)
-        {
-            idleClip.Play();
-            fxControl.Play();
-            base.OnDraw(p);
-        }
-
-        public override void OnHolster()
-        {
-            idleClip.Stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            fxControl.StopAndDestroy(0f);
-            base.OnHolster();
+            Destroy(hb);
         }
 
         public override void OnToolUseAnim(GUIHand hand)
         {
-            ErrorMessage.AddError("Used radiant thermoblade to hit a resource");
+            ErrorMessage.AddError("Knife used to attack");
             base.OnToolUseAnim(hand);
         }
     }
