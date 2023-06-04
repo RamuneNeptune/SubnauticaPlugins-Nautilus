@@ -5,6 +5,9 @@ using HarmonyLib;
 using RamuneLib;
 using Nautilus.Handlers;
 using UnityEngine;
+using System.Collections;
+using Ramune.LeviathanLocatorChip.Items;
+using UWE;
 
 namespace Ramune.LeviathanLocatorChip
 {
@@ -51,8 +54,16 @@ namespace Ramune.LeviathanLocatorChip
             Reaper = EnumHandler.AddEntry<PingType>("Reaper").WithIcon(Utilities.GetSprite("Reaper"));
             Treader = EnumHandler.AddEntry<PingType>("Treader").WithIcon(Utilities.GetSprite("Treader"));
 
+            CoroutineHost.StartCoroutine(Wait());
+
             Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
             logger = Logger;
+        }
+
+        public IEnumerator Wait()
+        {
+            yield return new WaitUntil(() => Player.main);
+            Player.main.gameObject.EnsureComponent<LeviathanLocatorMono>();
         }
     }
 }

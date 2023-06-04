@@ -344,6 +344,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BepInEx.cs" />
+    <Compile Include="Constructables\RadiantLocker.cs" />
     <Compile Include="Fabricators\RadiantFabricator.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Items\RadiantCrystal.cs" />

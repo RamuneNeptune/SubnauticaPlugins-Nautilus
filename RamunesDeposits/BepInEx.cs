@@ -4,12 +4,7 @@ using BepInEx.Logging;
 using HarmonyLib;
 using RamuneLib;
 using BepInEx;
-using UnityEngine;
-using Ramune.RamunesOutcrops.Items;
-using Ramune.RamunesOutcrops.Fabricators;
-using UnityEngine.AddressableAssets;
-using UWE;
-using System;
+
 
 namespace Ramune.RamunesOutcrops
 {
@@ -35,6 +30,7 @@ namespace Ramune.RamunesOutcrops
             Main.FindPiracy();
 
             Fabricators.RadiantFabricator.Patch();
+            Constructables.RadiantLocker.Patch();
             Items.RadiantCrystal.Patch();
             Items.RadiantThermoblade.Patch();
             Items.RadiantFins.Patch();

@@ -42,7 +42,7 @@ namespace Ramune.RamunesOutcrops.Fabricators
             CraftTreeHandler.AddTabNode(fabTreeType, "Tools", "Tools", Utilities.GetSprite("RadiantFabricatorToolsTabSprite"));
             CraftTreeHandler.AddTabNode(fabTreeType, "Equipment", "Equipment", Utilities.GetSprite("RadiantFabricatorEquipmentTabSprite"));
             CraftTreeHandler.AddTabNode(fabTreeType, "Electronics", "Electronics", Utilities.GetSprite("RadiantFabricatorElectronicsTabSprite"));
-            
+            CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.DiamondBlade, "Blades");
             CraftTreeType = fabTreeType;
         }
     }
