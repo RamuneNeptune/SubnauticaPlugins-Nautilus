@@ -1,9 +1,26 @@
 ﻿
-using static Ramune.RamunesOutcrops.Resources;
-using BepInEx.Logging;
-using HarmonyLib;
-using RamuneLib;
-using BepInEx;
+global using static Ramune.RamunesOutcrops.RamunesOutcrops;
+global using Ramune.RamunesOutcrops.Buildables;
+global using Ramune.RamunesOutcrops.Craftables;
+global using Nautilus.Assets.PrefabTemplates;
+global using Ramune.RamunesOutcrops.Outcrops;
+global using UnityEngine.AddressableAssets;
+global using System.Collections.Generic;
+global using Nautilus.Assets.Gadgets;
+global using Nautilus.Extensions;
+global using System.Collections;
+global using Nautilus.Handlers;
+global using Nautilus.Crafting;
+global using Nautilus.Utility;
+global using static CraftData;
+global using BepInEx.Logging;
+global using Nautilus.Assets;
+global using UnityEngine;
+global using System.Linq;
+global using HarmonyLib;
+global using RamuneLib;
+global using BepInEx;
+global using System;
 
 
 namespace Ramune.RamunesOutcrops
@@ -28,22 +45,30 @@ namespace Ramune.RamunesOutcrops
             logger = Logger;
             harmony.PatchAll();
             Main.FindPiracy();
+            LoadItems();
+        }
 
-            Fabricators.RadiantFabricator.Patch();
-            Constructables.RadiantLocker.Patch();
-            Items.RadiantCrystal.Patch();
-            Items.RadiantThermoblade.Patch();
-            Items.RadiantFins.Patch();
-            Items.RadiantCube.Patch();
-            Items.RadiantTank.Patch();
-            Items.RadiantSeaglide.Patch();
-            Items.RadiantRebreather.Patch();
+        public void LoadItems()
+        {
+            Craftables.RadiantCrystal.Patch();
+            Buildables.RadiantFabricator.Patch();
+            Buildables.RadiantLocker.Patch();
+            Buildables.RadiantWallLocker.Patch();
+            Craftables.RadiantThermoblade.Patch();
+            Craftables.RadiantFins.Patch();
+            Craftables.RadiantCube.Patch();
+            Craftables.RadiantTank.Patch();
+            Craftables.RadiantSeaglide.Patch();
+            Craftables.RadiantRebreather.Patch();
+            LoadOutcrops();
+        }
 
-            LodestoneOutcrop = Helpers.CreateOutcrop("LodestoneOutcrop", "Lodestone outcrop", "A lodestone outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(LodestoneOutcropBiomes), LodestoneOutcropItems);
-            GeyseriteOutcrop = Helpers.CreateOutcrop("GeyseriteOutcrop", "Geyserite outcrop", "A geyserite outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(GeyseriteOutcropBiomes), GeyseriteOutcropItems);
-            SiltstoneOutcrop = Helpers.CreateOutcrop("SiltstoneOutcrop", "Siltstone outcrop", "A siltstone outcrop.", TechType.LimestoneChunk, Helpers.CreateBiomeData(SiltstoneOutcropBiomes), SiltstoneOutcropItems);
-            SerpentiteOutcrop = Helpers.CreateOutcrop("SerpentiteOutcrop", "Serpentite outcrop", "A serpentite outcrop.", TechType.SandstoneChunk, Helpers.CreateBiomeData(SerpentiteOutcropBiomes), SerpentiteOutcropItems);
-
+        public void LoadOutcrops()
+        {
+            LodestoneOutcrop = Helpers.CreateOutcrop("LodestoneOutcrop", "Lodestone outcrop", "A lodestone outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(BiomeData.Lodestone), BreakableData.Lodestone);
+            GeyseriteOutcrop = Helpers.CreateOutcrop("GeyseriteOutcrop", "Geyserite outcrop", "A geyserite outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(BiomeData.Geyserite), BreakableData.Geyserite);
+            SiltstoneOutcrop = Helpers.CreateOutcrop("SiltstoneOutcrop", "Siltstone outcrop", "A siltstone outcrop.", TechType.LimestoneChunk, Helpers.CreateBiomeData(BiomeData.Siltstone), BreakableData.Siltstone);
+            SerpentiteOutcrop = Helpers.CreateOutcrop("SerpentiteOutcrop", "Serpentite outcrop", "A serpentite outcrop.", TechType.SandstoneChunk, Helpers.CreateBiomeData(BiomeData.Serpentite), BreakableData.Serpentite);
             Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
         }
     }

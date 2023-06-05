@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Nautilus.Assets.Gadgets;
-using Nautilus.Assets.PrefabTemplates;
-using Nautilus.Assets;
-using static CraftData;
-using UnityEngine;
-using RamuneLib;
-using Ramune.RamunesOutcrops.Fabricators;
+﻿
 
-namespace Ramune.RamunesOutcrops.Items
+
+namespace Ramune.RamunesOutcrops.Craftables
 {
     public class RadiantSeaglideMono : MonoBehaviour
     {
@@ -25,6 +15,8 @@ namespace Ramune.RamunesOutcrops.Items
             controller.seaglideWaterAcceleration = 55f;
         }
     }
+
+
 
     public static class RadiantSeaglide
     {

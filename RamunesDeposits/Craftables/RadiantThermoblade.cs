@@ -1,17 +1,7 @@
 ﻿
-using Nautilus.Assets.PrefabTemplates;
-using Nautilus.Assets;
-using static CraftData;
-using RamuneLib;
-using Nautilus.Assets.Gadgets;
-using UnityEngine;
-using Ramune.RamunesOutcrops.Fabricators;
-using System.Collections;
-using UWE;
-using UnityEngine.XR;
-using Nautilus.Extensions;
 
-namespace Ramune.RamunesOutcrops.Items
+
+namespace Ramune.RamunesOutcrops.Craftables
 {
     public class RadiantThermobladeMono : HeatBlade
     {
@@ -64,7 +54,7 @@ namespace Ramune.RamunesOutcrops.Items
                     var heatblade = go.GetComponent<HeatBlade>();
                     var radiantblade = go.EnsureComponent<RadiantThermobladeMono>().CopyComponent(heatblade);
 
-                    Object.DestroyImmediate(heatblade);
+                    UnityEngine.Object.DestroyImmediate(heatblade);
                 }
             };
             prefab.SetGameObject(clone);

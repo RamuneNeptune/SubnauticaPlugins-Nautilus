@@ -1,24 +1,13 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Nautilus.Assets;
-using Nautilus.Assets.Gadgets;
-using Nautilus.Assets.PrefabTemplates;
-using Nautilus.Extensions;
-using Nautilus.Handlers;
-using RamuneLib;
-using UnityEngine;
-using UnityEngine.Yoga;
-using static LootDistributionData;
+
 
 namespace Ramune.RamunesOutcrops
 {
     public static class Helpers
     {
-        public static BiomeData[] CreateBiomeData(Dictionary<BiomeType, (int, float)> biomeDatas)
+        public static LootDistributionData.BiomeData[] CreateBiomeData(Dictionary<BiomeType, (int, float)> biomeDatas)
         {
-            BiomeData[] biomeDatasArray = new BiomeData[biomeDatas.Count];
+            LootDistributionData.BiomeData[] biomeDatasArray = new LootDistributionData.BiomeData[biomeDatas.Count];
             int index = 0;
 
             foreach (var kvp in biomeDatas)
@@ -27,16 +16,14 @@ namespace Ramune.RamunesOutcrops
                 var _count = kvp.Value.Item1;
                 var _probability = kvp.Value.Item2;
 
-                biomeDatasArray[index] = new BiomeData { biome = _biome, count = _count, probability = _probability };
+                biomeDatasArray[index] = new LootDistributionData.BiomeData { biome = _biome, count = _count, probability = _probability };
                 index++;
-
-                RamunesOutcrops.logger.LogDebug($"{_biome}, {_count}, {_probability * 100}%");
             }
             return biomeDatasArray;
         }
 
 
-        public static TechType CreateOutcrop(string id, string name, string description, TechType outcropToClone, BiomeData[] biomeData, List<BreakableResource.RandomPrefab> itemData)
+        public static TechType CreateOutcrop(string id, string name, string description, TechType outcropToClone, LootDistributionData.BiomeData[] biomeData, List<BreakableResource.RandomPrefab> breakableData)
         {
             var info = Utilities.CreatePrefabInfo(id, name, description, Utilities.GetSprite(id + "Sprite"), 1, 1);
             var prefab = new CustomPrefab(info);
@@ -52,23 +39,21 @@ namespace Ramune.RamunesOutcrops
                     }
 
                     var breakable = go.GetComponent<BreakableResource>();
-                    breakable.defaultPrefabReference = itemData.Last().prefabReference;
-                    breakable.defaultPrefabTechType = itemData.Last().prefabTechType;
-                    breakable.breakText = $"Break {name}";
-                    breakable.prefabList = itemData;
+                    breakable.defaultPrefabReference = breakableData.Last().prefabReference;
+                    breakable.defaultPrefabTechType = breakableData.Last().prefabTechType;
+                    breakable.breakText = $"Break {name.ToLower()}";
+                    breakable.prefabList = breakableData;
                 }
             };
             prefab.SetPdaGroupCategory(TechGroup.Resources, TechCategory.BasicMaterials);
             prefab.SetGameObject(clone);
             prefab.SetSpawns(biomeData);
             prefab.Register();
-
-            RamunesOutcrops.logger.LogDebug($"'{id}' is registered");
             return prefab.Info.TechType;
         }
 
 
-        public static void CreateResource(string id, string name, string description, TechType resourceToClone, Color materialColor, BiomeData[] biomeData)
+        public static void CreateResource(string id, string name, string description, TechType resourceToClone, Color materialColor, LootDistributionData.BiomeData[] biomeData)
         {
             var info = Utilities.CreatePrefabInfo(id, name, description, Utilities.GetSprite(id + "Sprite"), 1, 1);
             var prefab = new CustomPrefab(info);
@@ -95,7 +80,6 @@ namespace Ramune.RamunesOutcrops
             prefab.SetGameObject(clone);
             prefab.SetSpawns(biomeData);
             prefab.Register();
-            RamunesOutcrops.logger.LogDebug($"'{id}' is finished & registered");
         }
     }
 }

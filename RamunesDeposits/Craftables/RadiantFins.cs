@@ -1,13 +1,7 @@
 ﻿
-using Nautilus.Assets.PrefabTemplates;
-using Nautilus.Assets;
-using Ramune.RamunesOutcrops.Fabricators;
-using static CraftData;
-using RamuneLib;
-using Nautilus.Assets.Gadgets;
-using UnityEngine;
 
-namespace Ramune.RamunesOutcrops.Items
+
+namespace Ramune.RamunesOutcrops.Craftables
 {
     public static class RadiantFins
     {

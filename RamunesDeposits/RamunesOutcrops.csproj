@@ -344,21 +344,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BepInEx.cs" />
-    <Compile Include="Constructables\RadiantLocker.cs" />
-    <Compile Include="Fabricators\RadiantFabricator.cs" />
+    <Compile Include="Buildables\RadiantLocker.cs" />
+    <Compile Include="Buildables\RadiantWallLocker.cs" />
+    <Compile Include="Buildables\RadiantFabricator.cs" />
     <Compile Include="Helpers.cs" />
-    <Compile Include="Items\RadiantCrystal.cs" />
-    <Compile Include="Items\RadiantCube.cs" />
-    <Compile Include="Items\RadiantRebreather.cs" />
-    <Compile Include="Items\RadiantSeaglide.cs" />
-    <Compile Include="Items\RadiantThermoblade.cs" />
-    <Compile Include="Items\RadiantTank.cs" />
+    <Compile Include="Craftables\RadiantCrystal.cs" />
+    <Compile Include="Craftables\RadiantCube.cs" />
+    <Compile Include="Craftables\RadiantRebreather.cs" />
+    <Compile Include="Craftables\RadiantSeaglide.cs" />
+    <Compile Include="Craftables\RadiantThermoblade.cs" />
+    <Compile Include="Craftables\RadiantTank.cs" />
+    <Compile Include="Outcrops\BiomeData.cs" />
+    <Compile Include="Outcrops\BreakableData.cs" />
     <Compile Include="Patches\BreakableResource.cs" />
     <Compile Include="Patches\Player.cs" />
     <Compile Include="Patches\PlayerTool.cs" />
-    <Compile Include="Items\RadiantFins.cs" />
+    <Compile Include="Craftables\RadiantFins.cs" />
     <Compile Include="Patches\UnderwaterMotor.cs" />
-    <Compile Include="Resources.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

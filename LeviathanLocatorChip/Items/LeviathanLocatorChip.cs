@@ -27,7 +27,6 @@ namespace Ramune.LeviathanLocatorChip.Items
 
         public void Update()
         {
-            Log(Colors.Blue, "..Update()..");
             if(Input.GetKeyDown(KeyCode.G))
             {
                 if(!IsEquipped())

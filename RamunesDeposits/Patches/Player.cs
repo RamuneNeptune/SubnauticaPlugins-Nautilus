@@ -1,6 +1,5 @@
 ﻿
-using HarmonyLib;
-using Ramune.RamunesOutcrops.Items;
+
 
 namespace Ramune.RamunesOutcrops.Patches
 {
@@ -13,6 +12,8 @@ namespace Ramune.RamunesOutcrops.Patches
             if(Inventory.Get().equipment.GetCount(RadiantRebreather.Info.TechType) > 0) __result = 4f;
         }
 
+        /* This is wrong, go re-read the method and figure out how it works
+         
         [HarmonyPatch(typeof(Player), nameof(Player.GetOxygenPerBreath))]
         public static void GetOxygenPerBreath(Player __instance, float breathingInterval, int depthClass, ref float __result)
         {
@@ -23,5 +24,7 @@ namespace Ramune.RamunesOutcrops.Patches
                 else if(depthClass == 3) __result = 3.5f;
             }
         }
+
+        */
     }
 }

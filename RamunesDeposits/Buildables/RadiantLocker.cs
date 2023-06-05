@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Nautilus.Assets;
-using Nautilus.Assets.Gadgets;
-using Nautilus.Assets.PrefabTemplates;
-using Ramune.RamunesOutcrops.Fabricators;
-using Ramune.RamunesOutcrops.Items;
-using RamuneLib;
-using UnityEngine;
+﻿
 using static CraftData;
+using Ramune.RamunesOutcrops.Craftables;
+using Nautilus.Assets.PrefabTemplates;
+using Nautilus.Assets.Gadgets;
+using Nautilus.Assets;
+using UnityEngine;
+using RamuneLib;
 
-namespace Ramune.RamunesOutcrops.Constructables
+namespace Ramune.RamunesOutcrops.Buildables
 {
     public static class RadiantLocker
     {
@@ -29,21 +24,21 @@ namespace Ramune.RamunesOutcrops.Constructables
                     StorageContainer storage = locker.GetComponent<StorageContainer>();
                     storage.hoverText = "Open radiant locker";
                     storage.storageLabel = "Radiant locker";
-                    storage.height = 5;
-                    storage.width = 5;
-                    storage.Resize(5, 5);
+                    storage.height = 4;
+                    storage.width = 4;
+                    storage.Resize(4, 4);
 
                     MeshRenderer[] renderers = locker.GetComponentsInChildren<MeshRenderer>();
                     foreach(var r in renderers)
                     {
-                        r.material.color = new Color(0.67f, 0.1f, 0.85f, 0.4f);
+
                     }
                 }
             };
 
             prefab.SetGameObject(clone);
             prefab.SetPdaGroupCategory(TechGroup.InteriorModules, TechCategory.InteriorModule).SetBuildable(true);
-            prefab.SetUnlock(RadiantCrystal.Info.TechType);
+            //prefab.SetUnlock(RadiantCrystal.Info.TechType);
             prefab.SetRecipe(Utilities.CreateRecipe(1,
                 new Ingredient(TechType.Quartz, 1),
                 new Ingredient(TechType.Titanium, 2),

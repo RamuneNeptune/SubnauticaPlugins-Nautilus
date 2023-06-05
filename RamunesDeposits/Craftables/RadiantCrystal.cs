@@ -1,20 +1,13 @@
 ﻿
-using Nautilus.Assets;
-using Nautilus.Assets.Gadgets;
-using Nautilus.Assets.PrefabTemplates;
-using Nautilus.Utility;
-using RamuneLib;
-using UnityEngine;
 
-namespace Ramune.RamunesOutcrops.Items
+
+namespace Ramune.RamunesOutcrops.Craftables
 {
     public static class RadiantCrystal
     {
         public static PrefabInfo Info;
         public static void Patch()
         {
-            RamunesOutcrops.logger.LogDebug("'RadiantCrystal' is being created with set BiomeData..");
-
             Info = Utilities.CreatePrefabInfo("RadiantCrystal", "<color=#C858DF>Radiant</color> crystal", "A piece of radiant crystal.", Utilities.GetSprite("RadiantCrystalSprite"), 1, 1);
             var prefab = new CustomPrefab(Info);
             var clone = new CloneTemplate(Info, TechType.Kyanite)
@@ -37,11 +30,10 @@ namespace Ramune.RamunesOutcrops.Items
                     }
                 }
             };
-            prefab.SetPdaGroupCategory(TechGroup.Resources, TechCategory.BasicMaterials);
             prefab.SetGameObject(clone);
-            prefab.SetSpawns(Helpers.CreateBiomeData(Resources.RadiantCrystalBiomes));
+            prefab.SetPdaGroupCategory(TechGroup.Resources, TechCategory.BasicMaterials);
+            prefab.SetSpawns(Helpers.CreateBiomeData(BiomeData.RadiantCrystal));
             prefab.Register();
-            RamunesOutcrops.logger.LogDebug($"'RadiantCrystal' is finished & registered");
         }
     }
 }
