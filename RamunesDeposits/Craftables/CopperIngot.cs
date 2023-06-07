@@ -9,7 +9,7 @@ namespace Ramune.RamunesOutcrops.Craftables
 
         public static void Patch()
         {
-            CustomPrefab prefab = new CustomPrefab("CopperIngotItem", "Copper Ingot", "Better storage of copper.");
+            CustomPrefab prefab = new CustomPrefab("CopperIngotItem", "Copper Ingot", "Better storage of copper." /* Load your sprite here */);
             CloneTemplate clone = new CloneTemplate(prefab.Info, TechType.TitaniumIngot)
             {
                 ModifyPrefab = ingot =>
