@@ -10,7 +10,7 @@ namespace Ramune.IonSolarPanel.Patches
     {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(SolarPanel), nameof(SolarPanel.Start))]
-        public static void StartPostfix(SolarPanel __instance)
+        public static void Start(SolarPanel __instance)
         {
             if(__instance.name != "IonSolarPanel(Clone)") return;
 

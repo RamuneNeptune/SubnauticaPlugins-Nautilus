@@ -10,7 +10,7 @@ namespace Ramune.RamunesOutcrops
             LootDistributionData.BiomeData[] biomeDatasArray = new LootDistributionData.BiomeData[biomeDatas.Count];
             int index = 0;
 
-            foreach (var kvp in biomeDatas)
+            foreach(var kvp in biomeDatas)
             {
                 var _biome = kvp.Key;
                 var _count = kvp.Value.Item1;

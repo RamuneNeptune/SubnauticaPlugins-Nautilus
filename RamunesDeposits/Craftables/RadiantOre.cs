@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TEST
+namespace Ramune.RamunesOutcrops.Craftables
 {
-    public class Class1
+    internal class RadiantOre
     {
     }
 }

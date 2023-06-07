@@ -6,6 +6,7 @@ using Nautilus.Assets.Gadgets;
 using Nautilus.Assets;
 using UnityEngine;
 using RamuneLib;
+using Nautilus.Extensions;
 
 namespace Ramune.RamunesOutcrops.Buildables
 {
@@ -21,7 +22,7 @@ namespace Ramune.RamunesOutcrops.Buildables
             {
                 ModifyPrefab = locker =>
                 {
-                    StorageContainer storage = locker.GetComponent<StorageContainer>();
+                    var storage = locker.GetComponent<StorageContainer>();
                     storage.hoverText = "Open radiant locker";
                     storage.storageLabel = "Radiant wall locker";
                     storage.height = 4;
@@ -37,6 +38,15 @@ namespace Ramune.RamunesOutcrops.Buildables
                             r.materials[0].SetTexture("_SpecTex", Utilities.GetTexture("RadiantWallLockerTexture2"));
                             r.materials[1].SetTexture("_MainTex", Utilities.GetTexture("RadiantWallLockerTexture1"));
                             r.materials[1].SetTexture("_SpecTex", Utilities.GetTexture("RadiantWallLockerTexture1"));
+
+                            r.materials[1].SetTexture("_Illum", Utilities.GetTexture("RadiantWallLockerTexture3"));
+                            r.materials[0].SetTexture("_Illum", Utilities.GetTexture("RadiantWallLockerTexture3"));
+                            r.materials[1].EnableKeyword("MARMO_EMISSION");
+                            r.materials[0].EnableKeyword("MARMO_EMISSION");
+                            r.materials[1].SetColor("_GlowColor", new Color(0.49f, 0f, 0.77f, 0.4f));
+                            r.materials[0].SetColor("_GlowColor", new Color(0.49f, 0f, 0.77f, 0.4f));
+                            r.materials[1].SetFloat("_GlowStrength", 3.2f);
+                            r.materials[0].SetFloat("_GlowStrength", 3.2f);
                         }
                         else
                         {

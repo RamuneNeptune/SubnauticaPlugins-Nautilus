@@ -21,8 +21,6 @@ namespace Ramune.IonSolarPanel
         {
             harmony.PatchAll();
             Main.FindPiracy();
-            Items.IonCrystalShard.Patch();
-            Items.IonSolarPanelKit.Patch();
             Items.IonSolarPanel.Patch();
             Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
             logger = Logger;

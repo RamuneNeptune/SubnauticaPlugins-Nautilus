@@ -9,20 +9,28 @@ namespace Ramune.RamunesOutcrops.Craftables
 
         public static void Patch()
         {
-            Info = Utilities.CreatePrefabInfo("RadiantCube", "<color=#C858DF>Radiant</color> Cube", "High capacity energy source.", Utilities.GetSprite("RadiantCubeSprite"), 1, 1);
+            Info = Utilities.CreatePrefabInfo("RadiantCube", "<color=#8f01ff>Radiant</color> Cube", "High capacity energy source.", Utilities.GetSprite("RadiantCubeSprite"), 1, 1);
             var prefab = new CustomPrefab(Info);
             var clone = new CloneTemplate(Info, TechType.PrecursorIonCrystal)
             {
                 ModifyPrefab = go =>
                 {
-                    var renderer = go.GetComponentInChildren<MeshRenderer>();
-                    foreach(var m in renderer.materials)
+                    go.FindChild("Point light").GetComponent<Light>().color = new Color(0.72f, 0f, 0.85f);
+
+                    var renderers = go.GetComponentsInChildren<MeshRenderer>(true);
+                    foreach(var r  in renderers)
                     {
-                        m.mainTexture = Utilities.GetTexture("RadiantCubeTexture");
-                        m.SetTexture("_Illum", Utilities.GetTexture("RadiantCubeTexture"));
-                        m.SetColor("_GlowColor", new Color(0.67f, 0.1f, 0.85f, 0.4f));
+                        foreach(var m in r.materials)
+                        {
+                            m.mainTexture = Utilities.GetTexture("RadiantCubeTexture");
+                            m.SetTexture("_Illum", Utilities.GetTexture("RadiantCubeTexture"));
+                            m.SetTexture("_SpecTex", Utilities.GetTexture("RadiantCubeTexture"));
+                            m.SetColor("_GlowColor", new Color(0.67f, 0.1f, 0.85f, 0.4f));
+                            m.color = new Color(0.5f, 0f, 0.5f);
+                        }
                     }
                     go.EnsureComponent<Battery>()._capacity = 300000;
+                    PrefabUtils.AddVFXFabricating(go, "", 1.5f, 1.5f);
                 }
             };
 

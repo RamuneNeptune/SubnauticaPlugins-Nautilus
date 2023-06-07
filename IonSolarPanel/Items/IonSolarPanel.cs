@@ -15,7 +15,7 @@ namespace Ramune.IonSolarPanel.Items
         public static void Patch()
         {
             Info = Utilities.CreatePrefabInfo("IonSolarPanel", "Ion solar panel", "Procudes power from the sun", Utilities.GetSprite("IonSolarPanelSprite"), 1, 1);
-
+            var prefab = new CustomPrefab(Info);
             var clone = new CloneTemplate(Info, TechType.SolarPanel)
             {
                 ModifyPrefab = go =>
@@ -33,10 +33,10 @@ namespace Ramune.IonSolarPanel.Items
                     }
                 }
             };
-            var prefab = new CustomPrefab(Info);
 
             prefab.SetGameObject(clone);
-            prefab.SetRecipe(Utilities.CreateRecipe(1, new CraftData.Ingredient(IonSolarPanelKit.Info.TechType, 1)));
+            prefab.SetUnlock(TechType.PrecursorIonBattery);
+            prefab.SetRecipe(Utilities.CreateRecipe(1, new CraftData.Ingredient(TechType.Quartz, 1)));
             prefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule).SetBuildable(true);
             prefab.Register();
         }

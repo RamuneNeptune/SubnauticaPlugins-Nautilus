@@ -23,21 +23,21 @@ namespace Ramune.RamunesOutcrops.Craftables
         public static PrefabInfo Info;
         public static void Patch()
         {
-            Info = Utilities.CreatePrefabInfo("RadiantSeaglide", "<color=#C858DF>Radiant</color> Seaglide", "SPEED: +50%\nMay need to re-equip to apply speed", Utilities.GetSprite("RadiantSeaglideSprite"), 2, 3);
+            Info = Utilities.CreatePrefabInfo("RadiantSeaglide", "<color=#8f01ff>Radiant</color> Seaglide", "SPEED: +50%\nMay need to re-equip to apply speed", Utilities.GetSprite("RadiantSeaglideSprite"), 2, 3);
             var prefab = new CustomPrefab(Info);
             var clone = new CloneTemplate(Info, TechType.Seaglide)
             {
                 ModifyPrefab = go =>
                 {
-                    var renderer = go.FindChild("1st Person Model").FindChild("Seaglide_rig").FindChild("SeaGlide_geo").GetComponent<SkinnedMeshRenderer>();
+                    go.EnsureComponent<RadiantSeaglideMono>();
+                    foreach(var li in go.GetComponents<Light>()) li.enabled = true;
 
+                    var renderer = go.FindChild("1st Person Model").FindChild("Seaglide_rig").FindChild("SeaGlide_geo").GetComponent<SkinnedMeshRenderer>();
                     renderer.materials[0].mainTexture = Utilities.GetTexture("RadiantSeaglideTexture");
                     renderer.materials[0].SetTexture("_Illum", Utilities.GetTexture("RadiantSeaglideIllumTexture"));
                     renderer.materials[0].SetTexture("_SpecTex", Utilities.GetTexture("RadiantSeaglideIllumTexture"));
                     renderer.materials[1].SetTexture("_Illum", Utilities.GetTexture("RadiantSeaglideMapIllumTexture"));
                     renderer.materials[1].SetTexture("_EmissiveTex", Utilities.GetTexture("RadiantSeaglideMapIllumTexture"));
-
-                    go.EnsureComponent<RadiantSeaglideMono>();
                 }
             };
 

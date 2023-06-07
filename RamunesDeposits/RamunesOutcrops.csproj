@@ -98,6 +98,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -347,6 +348,7 @@
     <Compile Include="Buildables\RadiantLocker.cs" />
     <Compile Include="Buildables\RadiantWallLocker.cs" />
     <Compile Include="Buildables\RadiantFabricator.cs" />
+    <Compile Include="Craftables\RadiantOre.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Craftables\RadiantCrystal.cs" />
     <Compile Include="Craftables\RadiantCube.cs" />
@@ -360,6 +362,7 @@
     <Compile Include="Patches\Player.cs" />
     <Compile Include="Patches\PlayerTool.cs" />
     <Compile Include="Craftables\RadiantFins.cs" />
+    <Compile Include="Patches\StorageContainer.cs" />
     <Compile Include="Patches\UnderwaterMotor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

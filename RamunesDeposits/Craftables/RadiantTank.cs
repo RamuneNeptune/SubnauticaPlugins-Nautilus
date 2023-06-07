@@ -8,7 +8,7 @@ namespace Ramune.RamunesOutcrops.Craftables
         public static PrefabInfo Info;
         public static void Patch()
         {
-            Info = Utilities.CreatePrefabInfo("RadiantTank", "Ultra High Capacity <color=#C858DF>Radiant</color> Tank", "Additional air capacity.", Utilities.GetSprite("RadiantTankSprite"), 3, 3);
+            Info = Utilities.CreatePrefabInfo("RadiantTank", "Ultra High Capacity <color=#8f01ff>Radiant</color> Tank", "Additional air capacity.", Utilities.GetSprite("RadiantTankSprite"), 3, 3);
             var prefab = new CustomPrefab(Info);
 
             prefab.SetUnlock(TechType.HighCapacityTank);

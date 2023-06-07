@@ -8,7 +8,7 @@ namespace Ramune.RamunesOutcrops.Craftables
         public static PrefabInfo Info;
         public static void Patch()
         {
-            Info = Utilities.CreatePrefabInfo("RadiantRebreather", "<color=#C858DF>Radiant</color> Rebreather", "Conserves oxygen when diving deeper. Absorbs and recycles CO2 into breathable air.\n\nEFFICIENCY: +50%", Utilities.GetSprite("RadiantRebreatherSprite"), 2, 2);
+            Info = Utilities.CreatePrefabInfo("RadiantRebreather", "<color=#8f01ff>Radiant</color> Rebreather", "Conserves oxygen when diving deeper. Absorbs and recycles CO2 into breathable air.\n\nEFFICIENCY: +50%", Utilities.GetSprite("RadiantRebreatherSprite"), 2, 2);
             var prefab = new CustomPrefab(Info);
             var clone = new CloneTemplate(Info, TechType.Rebreather);
 
