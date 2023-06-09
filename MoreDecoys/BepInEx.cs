@@ -7,6 +7,7 @@ using Ramune.MoreDecoys.Items;
 
 namespace Ramune.MoreDecoys
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class MoreDecoys : BaseUnityPlugin

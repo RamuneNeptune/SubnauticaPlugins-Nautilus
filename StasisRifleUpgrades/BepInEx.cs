@@ -14,6 +14,7 @@ using UWE;
 
 namespace Ramune.StasisRifleUpgrades
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class StasisRifleUpgrades : BaseUnityPlugin

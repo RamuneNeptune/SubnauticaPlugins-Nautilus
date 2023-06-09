@@ -7,6 +7,7 @@ using BepInEx;
 
 namespace Ramune.VehicleBayBeacon
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class VehicleBayBeacon : BaseUnityPlugin

@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
 
 namespace Ramune.RamunesOutcrops.Craftables
 {
-    internal class RadiantOre
+    public static class RadiantOre
     {
+        public static void Patch()
+        {
+
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace Ramune.LeviathanLocatorChip.Items
                 if(!IsEquipped())
                 {
                     if(set) return; set = true;
-                    foreach (var p in CreaturePatch.pings) p.SetVisible(false);
+                    foreach (var p in CreaturePatches.pings) p.SetVisible(false);
                 }
                 else
                 {
@@ -40,7 +40,7 @@ namespace Ramune.LeviathanLocatorChip.Items
                     else timeNextUseable = Time.time + timeCooldown;
 
                     if(!set) return; set = false;
-                    foreach(var p in CreaturePatch.pings) p.SetVisible(true);
+                    foreach(var p in CreaturePatches.pings) p.SetVisible(true);
                 }
             }
         }

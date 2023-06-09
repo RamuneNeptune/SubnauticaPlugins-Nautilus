@@ -6,6 +6,7 @@ using RamuneLib;
 
 namespace Ramune.AchievementUnlocker
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class AchievementUnlocker : BaseUnityPlugin

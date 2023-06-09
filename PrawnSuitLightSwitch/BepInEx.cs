@@ -10,6 +10,7 @@ using Nautilus.Handlers;
 
 namespace Ramune.PrawnSuitLightSwitch
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class PrawnSuitLightSwitch : BaseUnityPlugin
@@ -35,10 +36,10 @@ namespace Ramune.PrawnSuitLightSwitch
         [Keybind("Toggle lights key")]
         public KeyCode toggle = KeyCode.Mouse2;
 
-        [Toggle("Toggle on/off sounds")]
+        [Toggle("Enable toggle on/off sounds")]
         public bool sounds = true;
 
-        [Toggle("Toggle on/off subtitles")]
+        [Toggle("Enable toggle on/off subtitles")]
         public bool debug = false;
     }
 }

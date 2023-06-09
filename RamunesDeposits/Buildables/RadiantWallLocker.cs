@@ -1,12 +1,5 @@
 ﻿
-using static CraftData;
-using Ramune.RamunesOutcrops.Craftables;
-using Nautilus.Assets.PrefabTemplates;
-using Nautilus.Assets.Gadgets;
-using Nautilus.Assets;
-using UnityEngine;
-using RamuneLib;
-using Nautilus.Extensions;
+
 
 namespace Ramune.RamunesOutcrops.Buildables
 {
@@ -38,15 +31,14 @@ namespace Ramune.RamunesOutcrops.Buildables
                             r.materials[0].SetTexture("_SpecTex", Utilities.GetTexture("RadiantWallLockerTexture2"));
                             r.materials[1].SetTexture("_MainTex", Utilities.GetTexture("RadiantWallLockerTexture1"));
                             r.materials[1].SetTexture("_SpecTex", Utilities.GetTexture("RadiantWallLockerTexture1"));
-
                             r.materials[1].SetTexture("_Illum", Utilities.GetTexture("RadiantWallLockerTexture3"));
                             r.materials[0].SetTexture("_Illum", Utilities.GetTexture("RadiantWallLockerTexture3"));
-                            r.materials[1].EnableKeyword("MARMO_EMISSION");
-                            r.materials[0].EnableKeyword("MARMO_EMISSION");
                             r.materials[1].SetColor("_GlowColor", new Color(0.49f, 0f, 0.77f, 0.4f));
                             r.materials[0].SetColor("_GlowColor", new Color(0.49f, 0f, 0.77f, 0.4f));
                             r.materials[1].SetFloat("_GlowStrength", 3.2f);
                             r.materials[0].SetFloat("_GlowStrength", 3.2f);
+                            r.materials[1].EnableKeyword("MARMO_EMISSION");
+                            r.materials[0].EnableKeyword("MARMO_EMISSION");
                         }
                         else
                         {
@@ -59,7 +51,7 @@ namespace Ramune.RamunesOutcrops.Buildables
 
             prefab.SetGameObject(clone);
             prefab.SetPdaGroupCategory(TechGroup.InteriorModules, TechCategory.InteriorModule).SetBuildable(true);
-            //prefab.SetUnlock(RadiantCrystal.Info.TechType);
+            prefab.SetUnlock(RadiantCrystal.Info.TechType);
             prefab.SetRecipe(Utilities.CreateRecipe(1,
                 new Ingredient(TechType.Quartz, 1),
                 new Ingredient(TechType.Titanium, 2),

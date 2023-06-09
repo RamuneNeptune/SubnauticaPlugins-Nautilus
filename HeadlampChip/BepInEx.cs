@@ -12,6 +12,7 @@ using UWE;
 
 namespace Ramune.HeadlampChip
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class HeadlampChip : BaseUnityPlugin

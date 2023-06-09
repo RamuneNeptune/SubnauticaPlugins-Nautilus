@@ -11,6 +11,7 @@ using UWE;
 
 namespace Ramune.LeviathanLocatorChip
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class LeviathanLocatorChip : BaseUnityPlugin

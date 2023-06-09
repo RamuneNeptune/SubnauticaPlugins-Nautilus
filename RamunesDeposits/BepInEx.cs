@@ -25,6 +25,7 @@ global using System;
 
 namespace Ramune.RamunesOutcrops
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class RamunesOutcrops : BaseUnityPlugin
@@ -50,6 +51,7 @@ namespace Ramune.RamunesOutcrops
 
         public void LoadItems()
         {
+            /*
             Craftables.RadiantCrystal.Patch();
             Buildables.RadiantFabricator.Patch();
             Buildables.RadiantLocker.Patch();
@@ -60,6 +62,7 @@ namespace Ramune.RamunesOutcrops
             Craftables.RadiantTank.Patch();
             Craftables.RadiantSeaglide.Patch();
             Craftables.RadiantRebreather.Patch();
+            */
             LoadOutcrops();
         }
 

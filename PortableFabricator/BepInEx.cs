@@ -21,6 +21,7 @@ global using System;
 
 namespace Ramune.PortableFabricator
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class PortableFabricator : BaseUnityPlugin

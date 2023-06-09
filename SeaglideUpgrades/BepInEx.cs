@@ -12,6 +12,7 @@ using Nautilus.Options;
 
 namespace Ramune.SeaglideUpgrades
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class SeaglideUpgrades : BaseUnityPlugin

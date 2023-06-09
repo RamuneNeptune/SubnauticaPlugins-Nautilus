@@ -10,6 +10,7 @@ using Nautilus.Options;
 
 namespace Ramune.EarlyIonBattery
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class EarlyIonBattery : BaseUnityPlugin
@@ -34,10 +35,10 @@ namespace Ramune.EarlyIonBattery
     public class Options : ConfigFile
     {
         [Choice("Ion battery unlocks with:", new[] { "<color=#ffcf3c><b>1/3 </b></color> QEP Data Terminal", "<color=#ffcf3c><b>2/3 </b></color> Disease Research Facility", "<color=#ffcf3c><b>3/3 </b></color> Lost River Cache Terminal" })]
-        public string unlockBatt = "<color=#ffcf3c><b>1/3 </b></color> QEP Data Terminal";
+        public string unlockBatt; //= "<color=#ffcf3c><b>1/3 </b></color> QEP Data Terminal";
 
         [Choice("Ion power cell unlocks with:", new[] { "<color=#ffcf3c><b>1/3 </b></color> QEP Data Terminal", "<color=#ffcf3c><b>2/3 </b></color> Disease Research Facility", "<color=#ffcf3c><b>3/3 </b></color> Lost River Cache Terminal" })]
-        public string unlockCell = "<color=#ffcf3c><b>1/3 </b></color> QEP Data Terminal";
+        public string unlockCell; //= "<color=#ffcf3c><b>1/3 </b></color> QEP Data Terminal";
         
         [Button("Force <color=#ff4200>un-learn</color> Ion battery & power cell", Tooltip = "Click to un-learn the Ion battery & power cell blueprints")]
         public void Unlearn(ButtonClickedEventArgs _)

@@ -31,7 +31,10 @@ namespace Ramune.RamunesOutcrops.Buildables
                     MeshRenderer[] renderers = locker.GetComponentsInChildren<MeshRenderer>();
                     foreach(var r in renderers)
                     {
+                        foreach(var m in r.materials)
+                        {
 
+                        }
                     }
                 }
             };

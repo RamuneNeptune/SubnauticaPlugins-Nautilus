@@ -1,19 +1,18 @@
 ﻿
 using System.Collections.Generic;
 using HarmonyLib;
-using RamuneLib;
-using UnityEngine;
-using static VFXParticlesPool;
 
 
 namespace Ramune.LeviathanLocatorChip.Patches
 {
-    [HarmonyPatch(typeof(Creature), nameof(Creature.Start))]
-    public static class CreaturePatch
+    [HarmonyPatch(typeof(Creature))]
+    public static class CreaturePatches
     {
         public static List<PingInstance> pings = new List<PingInstance>();
 
-        public static void Postfix(Creature __instance)
+        [HarmonyPostfix]
+        [HarmonyPatch(typeof(Creature), nameof(Creature.Start))]
+        public static void Start(Creature __instance)
         {
             switch(__instance.name)
             {

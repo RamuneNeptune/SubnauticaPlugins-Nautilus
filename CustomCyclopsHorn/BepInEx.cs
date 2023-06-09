@@ -18,6 +18,7 @@ using Nautilus.Options;
 
 namespace Ramune.CustomCyclopsHorn
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class CustomCyclopsHorn : BaseUnityPlugin

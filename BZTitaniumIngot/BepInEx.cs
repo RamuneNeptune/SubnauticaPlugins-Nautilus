@@ -8,6 +8,7 @@ using static CraftData;
 
 namespace Ramune.BZTitaniumIngot
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class SeaglideUpgrades : BaseUnityPlugin

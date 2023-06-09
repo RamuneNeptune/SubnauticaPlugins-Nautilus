@@ -6,9 +6,11 @@ using RamuneLib;
 using Nautilus.Options.Attributes;
 using Nautilus.Handlers;
 using Nautilus.Json;
+using Nautilus.Options;
 
 namespace Ramune.IonThermalPlant
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class IonThermalPlant : BaseUnityPlugin
@@ -38,5 +40,12 @@ namespace Ramune.IonThermalPlant
 
         [Slider("Maximum power capacity", Format = "{0:F0}", DefaultValue = 500f, Min = 1f, Max = 1000f, Step = 1f, Tooltip = "The maximum amount of power the thermal plant can store. (Default: 500)")]
         public float powerMaxCapacity;
+
+        [Button("Unlock Ion thermal plant")]
+        public void Do(ButtonClickedEventArgs _)
+        {
+            if(KnownTech.Contains(Items.IonThermalPlant.Info.TechType)) return;
+            KnownTech.Add(Items.IonThermalPlant.Info.TechType);
+        }
     }
 }

@@ -3,13 +3,12 @@
 using BepInEx.Logging;
 using BepInEx;
 using HarmonyLib;
-using Nautilus.Handlers;
-using static CraftData;
 using RamuneLib;
 using Ramune.BZEnameledGlass.Items;
 
 namespace Ramune.BZEnameledGlass
 {
+    [BepInDependency("com.snmodding.nautilus")]
     [BepInPlugin(myGUID, pluginName, versionString)]
     [BepInProcess("Subnautica.exe")]
     public class SeaglideUpgrades : BaseUnityPlugin

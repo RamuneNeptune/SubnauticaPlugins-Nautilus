@@ -8,7 +8,7 @@ namespace Ramune.IonThermalPlant.Items
 {
     public static class IonThermalPlant
     {
-        public static Texture2D IonThermalPlantTexture = Utilities.GetTexture("IonThermalPlant_");
+        public static Texture2D IonThermalPlantTexture = Utilities.GetTexture("IonThermalPlant");
         public static Texture2D IonThermalPlantScreenTexture = Utilities.GetTexture("IonThermalPlantScreen");
 
         public static PrefabInfo Info;
@@ -43,9 +43,7 @@ namespace Ramune.IonThermalPlant.Items
 
             prefab.SetGameObject(clone);
             prefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule).SetBuildable(true);
-
             prefab.SetUnlock(TechType.PrecursorIonBattery, 0);
-
             prefab.SetRecipe(Utilities.CreateRecipe(1,
                 new CraftData.Ingredient(TechType.PlasteelIngot, 1),
                 new CraftData.Ingredient(TechType.Magnetite, 2),

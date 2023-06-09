@@ -6,10 +6,6 @@ namespace Ramune.RamunesOutcrops.Craftables
 {
     public class RadiantThermobladeMono : HeatBlade
     {
-        public int _;
-        public bool __ = false;
-        public readonly KeyCode[] ___ = { KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.B, KeyCode.A };
-        
         public static FMODAsset Seismic = AudioUtils.GetFmodAsset("event:/creature/crash/die");
         public static FMODAsset Explosive = AudioUtils.GetFmodAsset("");
         public static FMODAsset Nanoswarm = AudioUtils.GetFmodAsset("event:/tools/stasis_gun/sphere_enter");
@@ -62,20 +58,8 @@ namespace Ramune.RamunesOutcrops.Craftables
             {
                 if(Input.GetKeyDown(KeyCode.Q))
                 {
-                    FMODUWE.PlayOneShot(Next, Player.main.transform.position, 1f);
+                    IngameMenu.main.PlaySound(Next);
                     SetNextMode();
-
-                    for(int i = 1; i < ___.Length; i++)
-                    {
-                        if(Input.GetKeyDown(___[i]) || _ == i)
-                        {
-                            i++;
-                            _ = i;
-                            Utilities.Log(Colors.Amber, $"{i}");
-                            break;
-                        }
-                        else _ = 0;
-                    }
                 }
             }
 
