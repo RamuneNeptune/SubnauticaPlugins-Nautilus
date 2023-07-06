@@ -1,4 +1,6 @@
 ﻿
+using CuddleLibs.Utility;
+
 
 namespace Ramune.RamunesOutcrops
 {
@@ -15,20 +17,21 @@ namespace Ramune.RamunesOutcrops
                     var renderer = go.GetComponentInChildren<MeshRenderer>(true);
                     foreach (var m in renderer.materials)
                     {
-                        m.mainTexture = Utilities.GetTexture($"{id}Texture");
-                        m.SetTexture("_SpecTex", Utilities.GetTexture($"{id}Texture"));
+                        m.mainTexture = Utilities.GetTexture($"{id}Texture_1");
+                        m.SetTexture("_SpecTex", Utilities.GetTexture($"{id}Texture_1"));
                     }
 
                     var breakable = go.GetComponent<BreakableResource>();
                     breakable.breakText = $"Break {name.ToLower()}";
+                    breakable.RemoveVanillaDrops();
                 }
             };
 
-            OutcropsUtils.EnsureOutcropDrop(TechType.Kyanite, prefab.Info.TechType);
-            OutcropsUtils.EnsureOutcropDrop(TechType.Nickel, prefab.Info.TechType);
-            OutcropsUtils.EnsureOutcropDrop(TechType.JellyPlant, prefab.Info.TechType);
-            OutcropsUtils.EnsureOutcropDrop(TechType.Quartz, prefab.Info.TechType);
-            OutcropsUtils.EnsureOutcropDrop(TechType.AluminumOxide, prefab.Info.TechType);
+            OutcropsUtils.EnsureOutcropDrop(new List<(TechType, TechType, float)>()
+            {
+                {( prefab.Info.TechType, TechType.Kyanite, 0.5f )},
+                {( prefab.Info.TechType, TechType.Quartz, 0.5f )},
+            });
 
             prefab.SetPdaGroupCategory(TechGroup.Resources, TechCategory.BasicMaterials);
             prefab.SetGameObject(clone);

@@ -1,11 +1,9 @@
-﻿global using static Ramune.RamunesOutcrops.RamunesOutcrops;
 global using Nautilus.Assets.PrefabTemplates;
 global using UnityEngine.AddressableAssets;
 global using System.Collections.Generic;
 global using Nautilus.Assets.Gadgets;
 global using Nautilus.Extensions;
 global using System.Collections;
-global using CuddleLibs.Utility;
 global using Nautilus.Handlers;
 global using Nautilus.Crafting;
 global using Nautilus.Utility;
