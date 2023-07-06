@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KamikazeDrones
+namespace Ramune.RadiantResources.Items.Equipment
 {
-    public class BepInEx
+    internal class RadiantFins
     {
     }
 }

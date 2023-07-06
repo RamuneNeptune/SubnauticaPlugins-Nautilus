@@ -22,7 +22,6 @@ global using RamuneLib;
 global using BepInEx;
 global using System;
 
-
 namespace Ramune.RamunesOutcrops
 {
     [BepInDependency("com.snmodding.nautilus")]
@@ -51,6 +50,11 @@ namespace Ramune.RamunesOutcrops
 
         public void LoadItems()
         {
+            var prefab = new CustomPrefab("Bleh", "Bleh", "blehh", Utilities.GetSprite(TechType.BasaltChunk));
+            var clone = new CloneTemplate(prefab.Info, TechType.AcidMushroom);
+            prefab.SetGameObject(clone);
+            prefab.SetRecipe(Utilities.CreateRecipe(1, new Ingredient(TechType.Quartz, 2)));
+            prefab.Register();
             /*
             Craftables.RadiantCrystal.Patch();
             Buildables.RadiantFabricator.Patch();
@@ -68,7 +72,7 @@ namespace Ramune.RamunesOutcrops
 
         public void LoadOutcrops()
         {
-            LodestoneOutcrop = Helpers.CreateOutcrop("LodestoneOutcrop", "Lodestone outcrop", "A lodestone outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(BiomeData.Lodestone), BreakableData.Lodestone);
+            LodestoneOutcrop = Helpers.CreateOutcrop("LodestoneOutcrop", "Lodestone outcrop", "A lodestone outcrop.", TechType.BasaltChunk, Helpers.CreateBiomeData(BiomeData.Lodestone), BreakableData.Lodestone);
             GeyseriteOutcrop = Helpers.CreateOutcrop("GeyseriteOutcrop", "Geyserite outcrop", "A geyserite outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(BiomeData.Geyserite), BreakableData.Geyserite);
             SiltstoneOutcrop = Helpers.CreateOutcrop("SiltstoneOutcrop", "Siltstone outcrop", "A siltstone outcrop.", TechType.LimestoneChunk, Helpers.CreateBiomeData(BiomeData.Siltstone), BreakableData.Siltstone);
             SerpentiteOutcrop = Helpers.CreateOutcrop("SerpentiteOutcrop", "Serpentite outcrop", "A serpentite outcrop.", TechType.SandstoneChunk, Helpers.CreateBiomeData(BiomeData.Serpentite), BreakableData.Serpentite);

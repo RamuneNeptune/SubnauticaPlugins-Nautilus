@@ -5,6 +5,7 @@ using BepInEx;
 using HarmonyLib;
 using RamuneLib;
 using Ramune.BZEnameledGlass.Items;
+using System;
 
 namespace Ramune.BZEnameledGlass
 {
@@ -25,7 +26,7 @@ namespace Ramune.BZEnameledGlass
             harmony.PatchAll();
             Main.FindPiracy();
             AltEnameledGlass.Patch();
-            Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
             logger = Logger;
         }
     }

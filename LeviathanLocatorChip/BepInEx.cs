@@ -8,6 +8,7 @@ using UnityEngine;
 using System.Collections;
 using Ramune.LeviathanLocatorChip.Items;
 using UWE;
+using System;
 
 namespace Ramune.LeviathanLocatorChip
 {
@@ -48,16 +49,13 @@ namespace Ramune.LeviathanLocatorChip
             harmony.PatchAll();
             Main.FindPiracy();
             Items.LeviathanLocatorChip.Patch();
-
             Dragon = EnumHandler.AddEntry<PingType>("Dragon").WithIcon(Utilities.GetSprite("Dragon"));
             Ghost = EnumHandler.AddEntry<PingType>("Ghost").WithIcon(Utilities.GetSprite("Ghost"));
             GhostJuvenile = EnumHandler.AddEntry<PingType>("GhostJuvenile").WithIcon(Utilities.GetSprite("GhostJuvenile"));
             Reaper = EnumHandler.AddEntry<PingType>("Reaper").WithIcon(Utilities.GetSprite("Reaper"));
             Treader = EnumHandler.AddEntry<PingType>("Treader").WithIcon(Utilities.GetSprite("Treader"));
-
             CoroutineHost.StartCoroutine(Wait());
-
-            Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
             logger = Logger;
         }
 

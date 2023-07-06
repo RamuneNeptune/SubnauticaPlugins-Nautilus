@@ -9,6 +9,7 @@ using Nautilus.Options;
 using UnityEngine;
 using Nautilus.Json;
 using UWE;
+using System;
 
 namespace Ramune.HeadlampChip
 {
@@ -30,7 +31,7 @@ namespace Ramune.HeadlampChip
             harmony.PatchAll();
             Main.FindPiracy();
             HeadlampChipItem.Patch();
-            Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
             logger = Logger;
         }
     }

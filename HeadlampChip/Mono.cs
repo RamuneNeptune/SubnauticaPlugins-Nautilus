@@ -19,10 +19,14 @@ namespace Ramune.HeadlampChip
         public Player player;
         public Light light;
         public float offset = 0.94f;
+        public float currentTime;
         public int lightState;
 
+
         public void OnEnable() => Headlamps.Add(this);
+
         public void OnDisable() => Headlamps.Remove(this);
+
 
         public void Start()
         {
@@ -43,21 +47,22 @@ namespace Ramune.HeadlampChip
             InvokeRepeating(nameof(Refresh), 1f, 1f);
         }
 
+
         public void Update()
         {
+
+            lightRoot.transform.position = inv.cameraSocket.position + inv.cameraSocket.forward * offset;
+            lightRoot.transform.rotation = MainCamera.camera.transform.rotation;
+            lightRoot.transform.eulerAngles = MainCamera.camera.transform.eulerAngles;
+
+            lightState = light.enabled ? 1 : 0;
+
             if(!ChipEquipped() || player.isPiloting)
-            {
+            { 
                 light.enabled = false;
                 return;
             }
 
-            lightRoot.transform.position = inv.cameraSocket.position + inv.cameraSocket.forward * offset;
-            lightRoot.transform.rotation = inv.cameraSocket.rotation;
-            lightRoot.transform.eulerAngles = inv.cameraSocket.eulerAngles;
-
-            if(HeadlampChip.config.rainbow) Rainbow();
-
-            lightState = light.enabled ? 1 : 0;
             if(!Cursor.visible && GameInput.GetKeyDown(HeadlampChip.config.toggle))
             {
                 switch(lightState)
@@ -71,8 +76,11 @@ namespace Ramune.HeadlampChip
                         light.enabled = false;
                         break;
                 }
+
+                if(HeadlampChip.config.rainbow) Rainbow();
             }
         }
+
 
         public bool ChipEquipped()
         {
@@ -90,6 +98,7 @@ namespace Ramune.HeadlampChip
             return false;
         }
 
+
         public void Refresh()
         {
             color.r = HeadlampChip.config.red;
@@ -101,7 +110,7 @@ namespace Ramune.HeadlampChip
             light.innerSpotAngle = 80f * HeadlampChip.config.conesize;
             light.color = color;
         }
-        public float currentTime;
+
 
         public void Rainbow()
         {

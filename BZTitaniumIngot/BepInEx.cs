@@ -5,6 +5,7 @@ using HarmonyLib;
 using Nautilus.Handlers;
 using RamuneLib;
 using static CraftData;
+using System;
 
 namespace Ramune.BZTitaniumIngot
 {
@@ -25,7 +26,7 @@ namespace Ramune.BZTitaniumIngot
             harmony.PatchAll();
             Main.FindPiracy();
             CraftDataHandler.SetRecipeData(TechType.TitaniumIngot, Utilities.CreateRecipe(1, new Ingredient(TechType.Titanium, 5)));
-            Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
             logger = Logger;
         }
     }

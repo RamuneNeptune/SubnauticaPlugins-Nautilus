@@ -3,6 +3,7 @@ using BepInEx.Logging;
 using BepInEx;
 using HarmonyLib;
 using RamuneLib;
+using System;
 
 namespace Ramune.EnableAchievements
 {
@@ -21,7 +22,7 @@ namespace Ramune.EnableAchievements
         {
             harmony.PatchAll();
             Main.FindPiracy();
-            Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
             logger = Logger;
         }
     }

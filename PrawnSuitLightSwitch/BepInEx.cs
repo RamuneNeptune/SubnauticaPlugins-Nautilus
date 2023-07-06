@@ -7,6 +7,7 @@ using Nautilus.Options.Attributes;
 using Nautilus.Json;
 using UnityEngine;
 using Nautilus.Handlers;
+using System;
 
 namespace Ramune.PrawnSuitLightSwitch
 {
@@ -26,7 +27,7 @@ namespace Ramune.PrawnSuitLightSwitch
         {
             harmony.PatchAll();
             Main.FindPiracy();
-            Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
             logger = Logger;
         }
     }

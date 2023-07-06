@@ -2,6 +2,7 @@
 using BepInEx.Logging;
 using BepInEx;
 using RamuneLib;
+using System;
 
 namespace Ramune.DecoFabricator
 {
@@ -19,7 +20,7 @@ namespace Ramune.DecoFabricator
         {
             Main.FindPiracy();
             Fabricator.Patch();
-            Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
             logger = Logger;
         }
     }

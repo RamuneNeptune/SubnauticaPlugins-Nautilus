@@ -43,7 +43,7 @@ namespace Ramune.IonThermalPlant.Items
 
             prefab.SetGameObject(clone);
             prefab.SetPdaGroupCategory(TechGroup.ExteriorModules, TechCategory.ExteriorModule).SetBuildable(true);
-            prefab.SetUnlock(TechType.PrecursorIonBattery, 0);
+            prefab.SetUnlock(TechType.PrecursorIonBattery);
             prefab.SetRecipe(Utilities.CreateRecipe(1,
                 new CraftData.Ingredient(TechType.PlasteelIngot, 1),
                 new CraftData.Ingredient(TechType.Magnetite, 2),

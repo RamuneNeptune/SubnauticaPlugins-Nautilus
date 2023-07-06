@@ -1,6 +1,5 @@
 ﻿
 
-
 namespace Ramune.PortableFabricator.Buildables
 {
     public static class PortableFabricator
@@ -25,11 +24,10 @@ namespace Ramune.PortableFabricator.Buildables
             CraftTreeHandler.AddTabNode(fabTreeType, "Sustenance", "Sustenance", Utilities.GetSprite(TechType.Diamond));
             CraftTreeHandler.AddTabNode(fabTreeType, "Water", "Water", Utilities.GetSprite(TechType.Titanium), "Sustenance");
 
-            CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.FilteredWater,    "Sustenance", "Water");
+            CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.FilteredWater, "Sustenance", "Water");
             CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.DisinfectedWater, "Sustenance", "Water");
 
-            /*
-            CraftTreeHandler.AddTabNode(fabTreeType, "CuredFood",    "Cured food", Utilities.GetSprite(TechType.Titanium), "Sustenance");
+            CraftTreeHandler.AddTabNode(fabTreeType, "CuredFood", "Cured food", Utilities.GetSprite(TechType.Titanium), "Sustenance");
             CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.CuredHoleFish, "Sustenance", "CuredFood");
             CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.CuredPeeper, "Sustenance", "CuredFood");
             CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.CuredBladderfish, "Sustenance", "CuredFood");
@@ -60,8 +58,7 @@ namespace Ramune.PortableFabricator.Buildables
             CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.CookedOculus, "Sustenance", "CookedFood");
             CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.CookedHoopfish, "Sustenance", "CookedFood");
             CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.CookedSpinefish, "Sustenance", "CookedFood");
-            */
-
+            
             CraftTreeHandler.AddTabNode(fabTreeType, "Deployables", "Deployables", Utilities.GetSprite(TechType.Diamond));
             CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.Beacon, "Deployables");
             CraftTreeHandler.AddCraftingNode(fabTreeType, TechType.SmallStorage, "Deployables");

@@ -6,6 +6,7 @@ using Nautilus.Handlers;
 using Nautilus.Options.Attributes;
 using Nautilus.Json;
 using RamuneLib;
+using System;
 
 namespace Ramune.TableCoralMultiplier
 {
@@ -26,7 +27,7 @@ namespace Ramune.TableCoralMultiplier
         {
             harmony.PatchAll();
             Main.FindPiracy();
-            Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
             logger = Logger;
         }
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 using HarmonyLib;
 using RamuneLib;
 using BepInEx;
+using System;
 
 namespace Ramune.VehicleBayBeacon
 {
@@ -22,7 +23,7 @@ namespace Ramune.VehicleBayBeacon
         {
             harmony.PatchAll();
             Main.FindPiracy();
-            Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
             logger = Logger;
         }
     }

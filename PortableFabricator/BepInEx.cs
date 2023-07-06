@@ -38,7 +38,8 @@ namespace Ramune.PortableFabricator
             harmony.PatchAll();
             Main.FindPiracy();
             Buildables.PortableFabricator.Patch();
-            Craftables.PortableFabricatorReciever.Patch();
+            Craftables.PortableFabricator.Patch();
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
         }
     }
 }

@@ -4,6 +4,7 @@ using BepInEx;
 using HarmonyLib;
 using RamuneLib;
 using Ramune.MoreDecoys.Items;
+using System;
 
 namespace Ramune.MoreDecoys
 {
@@ -25,7 +26,7 @@ namespace Ramune.MoreDecoys
             StasisDecoy.Patch();
             ExplosiveDecoy.Patch();
             GasDecoy.Patch();
-            Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
             logger = Logger;
         }
     }

@@ -15,6 +15,7 @@ using UnityEngine;
 using UnityEngineInternal.Input;
 using System.Diagnostics;
 using Nautilus.Options;
+using System;
 
 namespace Ramune.CustomCyclopsHorn
 {
@@ -40,7 +41,7 @@ namespace Ramune.CustomCyclopsHorn
             harmony.PatchAll();
             Main.FindPiracy();
             SetupSounds();
-            Logger.LogInfo(pluginName + " " + versionString + " " + "has been loaded! (yay)");
+            Console.WriteLine($"Loaded [{pluginName} {versionString}]");
             logger = Logger;
         }
 
@@ -53,7 +54,7 @@ namespace Ramune.CustomCyclopsHorn
                 if(sounds.Contains(filename)) break;
                 if(!file.EndsWith(".mp3"))
                 {
-                    logger.LogError($"Incorrect file in 'Sounds' folder at: {file}");
+                    logger.LogError($"Incorrect file type in 'Sounds' folder at: {file}");
                     break;
                 }
                 Sound sound = AudioUtils.CreateSound(file, MODE._3D);
