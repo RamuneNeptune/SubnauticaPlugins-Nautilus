@@ -72,6 +72,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Betas", "Betas", "{5C197FFA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadiantResources", "RadiantResources\RadiantResources.csproj", "{848023B0-3427-4DAA-8717-E152AB79D0AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExosuitTurbo", "ExosuitTurbo\ExosuitTurbo.csproj", "{6D0A38E3-047A-4DAF-B4E8-C26D047A6A8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatureReskins", "CreatureReskins\CreatureReskins.csproj", "{33C7AF5F-2C03-4B2D-880E-A41E37E04FEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RamunesOutcrops", "RamunesOutcrops\RamunesOutcrops.csproj", "{7F02F9C7-34FA-40BE-8E6B-A77D3883C878}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -176,6 +182,18 @@ Global
 		{848023B0-3427-4DAA-8717-E152AB79D0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{848023B0-3427-4DAA-8717-E152AB79D0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{848023B0-3427-4DAA-8717-E152AB79D0AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D0A38E3-047A-4DAF-B4E8-C26D047A6A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D0A38E3-047A-4DAF-B4E8-C26D047A6A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D0A38E3-047A-4DAF-B4E8-C26D047A6A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D0A38E3-047A-4DAF-B4E8-C26D047A6A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33C7AF5F-2C03-4B2D-880E-A41E37E04FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C7AF5F-2C03-4B2D-880E-A41E37E04FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C7AF5F-2C03-4B2D-880E-A41E37E04FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C7AF5F-2C03-4B2D-880E-A41E37E04FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F02F9C7-34FA-40BE-8E6B-A77D3883C878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F02F9C7-34FA-40BE-8E6B-A77D3883C878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F02F9C7-34FA-40BE-8E6B-A77D3883C878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F02F9C7-34FA-40BE-8E6B-A77D3883C878}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -210,6 +228,9 @@ Global
 		{BA9D835C-99AF-495B-9ED7-BFE2C448B71F} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
 		{5C197FFA-4D0F-4AAF-91FE-F0647061DE70} = {EFFF19E8-0A63-44F8-B064-59301058371C}
 		{848023B0-3427-4DAA-8717-E152AB79D0AD} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
+		{6D0A38E3-047A-4DAF-B4E8-C26D047A6A8C} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
+		{33C7AF5F-2C03-4B2D-880E-A41E37E04FEA} = {44A14519-2323-4CC3-BEF9-CA1AF0067042}
+		{7F02F9C7-34FA-40BE-8E6B-A77D3883C878} = {5DDDB3B9-9E1E-464F-B90C-3C6B7B044A63}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C92EE9F4-51B0-4E47-8021-0C968DB68EC0}
@@ -218,16 +239,19 @@ Global
 		RamuneLib\RamuneLib.projitems*{07e75f7b-f846-45b0-a304-fae15ab52062}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{2b87ea1b-74b1-43d3-866a-c07592b169d0}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{2ce2accc-ce9f-4439-8a10-afb221925809}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{33c7af5f-2c03-4b2d-880e-a41e37e04fea}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{437e8f25-ac75-4a9a-8322-2e41a40edca2}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{4e7c5573-4002-4fe3-8375-3d9f97d5e75a}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{549cecd8-87a9-47ab-becd-4754f456ffe5}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{5e35d883-a90e-40c4-aceb-869be9c93690}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{605b0915-3458-4fd5-99be-19791d94d8ba}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{614655d4-29a8-4588-a4f5-2b0d618bc996}*SharedItemsImports = 13
+		RamuneLib\RamuneLib.projitems*{6d0a38e3-047a-4daf-b4e8-c26d047a6a8c}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{6fb634f0-7a94-480c-ba89-6e0335f280fe}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{7b162f4d-c0c7-41ec-a55d-ab785571f0da}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{7c4fb3a0-b8ff-4297-8db9-2f302c4bcd7c}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{7d3a5d29-406d-44b5-a8ed-40f6db298d1a}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{7f02f9c7-34fa-40be-8e6b-a77d3883c878}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{848023b0-3427-4daa-8717-e152ab79d0ad}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{8ca6c8f0-5467-4641-86ab-f6f9b89e090b}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{95b50703-6e53-4f20-be82-c0f7c10adf44}*SharedItemsImports = 4

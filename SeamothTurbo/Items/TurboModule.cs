@@ -10,8 +10,8 @@ namespace Ramune.SeamothTurbo.Items
         public static float backward;
         public static float sideward;
 
-        public static float maxCharge = 50f;
-        public static float cooldown = 10f;
+        public static float maxCharge = 10f;
+        public static float cooldown = 5f;
 
 
         public static void Patch()
@@ -30,28 +30,12 @@ namespace Ramune.SeamothTurbo.Items
                .WithFabricatorType(CraftTree.Type.SeamothUpgrades);
 
             prefab.SetVehicleUpgradeModule(EquipmentType.SeamothModule, QuickSlotType.SelectableChargeable)
+                .WithEnergyCost(10f)
                 .WithCooldown(cooldown)
                 .WithMaxCharge(maxCharge)
-                .WithOnModuleAdded((Vehicle vehicle, int slotId) => OnAdded())
-                .WithOnModuleRemoved((Vehicle vehicle, int slotId) => OnRemoved())
                 .WithOnModuleUsed((Vehicle vehicle, int slotID, float charge, float chargeScalar) => CoroutineHost.StartCoroutine(ActivateTurbo(vehicle, charge)));
             
             prefab.Register();
-        }
-
-
-        public static void OnAdded()
-        {
-            SeamothTurbo.logger.LogInfo("Module installed");
-            ErrorMessage.AddMessage("Module installed");
-            Subtitles.Add("Module installed");
-        }
-
-        public static void OnRemoved()
-        {
-            SeamothTurbo.logger.LogInfo("Module removed");
-            ErrorMessage.AddMessage("Module removed");
-            Subtitles.Add("Module removed");
         }
 
         public static IEnumerator ActivateTurbo(Vehicle vehicle, float charge)
@@ -60,23 +44,33 @@ namespace Ramune.SeamothTurbo.Items
             ErrorMessage.AddMessage("Module activated");
             Subtitles.Add("Module activated");
 
-            if(charge != maxCharge) yield break;
+            var seamoth = vehicle.gameObject.GetComponentInChildren<SeaMoth>();
+            var engine = vehicle.gameObject.GetComponentInChildren<EngineRpmSFXManager>();
 
-            var seamoth = vehicle.gameObject.GetComponent<SeaMoth>();
-            var engine = vehicle.gameObject.GetComponent<EngineRpmSFXManager>();
+            Utilities.Log(Colors.Yellow, "Grabbing components..");
 
             forward = vehicle.forwardForce;
             backward = vehicle.backwardForce;
             sideward = vehicle.sidewardForce;
 
+            vehicle.gameObject.GetComponentInChildren<Rigidbody>().AddForce(vehicle.transform.forward, ForceMode.VelocityChange);
+
             vehicle.forwardForce = forward * 5;
             vehicle.backwardForce = backward * 5;
             vehicle.sidewardForce = sideward * 5;
 
-            engine.engineRpmSFX.GetEventInstance().setPitch(1.15f);
-            engine.engineRpmSFX.GetEventInstance().setVolume(1.25f);
+            Utilities.Log(Colors.Green, "Speeding the mf up..");
 
-            yield return new WaitForSeconds(1.85f);
+            engine.engineRpmSFX.GetEventInstance().setPitch(1.25f);
+            engine.engineRpmSFX.GetEventInstance().setVolume(1.5f);
+
+            yield return new WaitForSeconds(1.2f);
+
+            vehicle.forwardForce = forward / 2;
+            vehicle.backwardForce = backward / 2;
+            vehicle.sidewardForce = sideward / 2;
+
+            yield return new WaitForSeconds(0.1f);
 
             vehicle.forwardForce = forward;
             vehicle.backwardForce = backward;
