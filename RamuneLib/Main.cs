@@ -110,8 +110,6 @@ namespace RamuneLib
 
 
         public static readonly HashSet<string> PiracyFiles = new HashSet<string> { "steam_api64.cdx", "steam_api64.ini", "steam_emu.ini", "valve.ini", "chuj.cdx", "SteamUserID.cfg", "Achievements.bin", "steam_settings", "user_steam_id.txt", "account_name.txt", "ScreamAPI.dll", "ScreamAPI32.dll", "ScreamAPI64.dll", "SmokeAPI.dll", "SmokeAPI32.dll", "SmokeAPI64.dll", "Free Steam Games Pre-installed for PC.url", "Torrent-Igruha.Org.URL", "oalinst.exe", };
-        public static RecipeData recipe = Utilities.CreateRecipe(0,
-            new Ingredient(TechType.None, 0));
 
         public static void FindPiracy()
         {
@@ -119,31 +117,17 @@ namespace RamuneLib
             {
                 if (File.Exists(Path.Combine(Environment.CurrentDirectory, file)))
                 {
-                    GotEm();
+                    CoroutineHost.StartCoroutine(LogError());
                     break;
                 }
             }
         }
 
-        public static void GotEm()
-        {
-            CoroutineHost.StartCoroutine(LogError());
-            foreach(TechType techType in Enum.GetValues(typeof(TechType)))
-            {
-                LanguageHandler.SetTechTypeName(techType, " ");
-                LanguageHandler.SetTechTypeTooltip(techType, " ");
-                CraftDataHandler.SetRecipeData(techType, recipe);
-            }
-        }
-
         public static IEnumerator LogError()
         {
-            while(true)
-            {
-                yield return new WaitForSeconds(1);
-                Console.WriteLine("Purchase the game at discounted prices here: https://isthereanydeal.com/game/subnautica/info/");
-                ErrorMessage.AddError("Purchase the game at discounted prices here: https://isthereanydeal.com/game/subnautica/info/");
-            }
+            yield return new WaitForSeconds(1);
+            Console.WriteLine("Purchase the game at discounted prices here: https://isthereanydeal.com/game/subnautica/info/");
+            ErrorMessage.AddError("Purchase the game at discounted prices here: https://isthereanydeal.com/game/subnautica/info/");
         }
     }
 }
