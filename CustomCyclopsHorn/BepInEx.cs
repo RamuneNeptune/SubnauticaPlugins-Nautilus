@@ -1,21 +1,4 @@
 ﻿
-using BepInEx.Logging;
-using BepInEx;
-using HarmonyLib;
-using Nautilus.Handlers;
-using Nautilus.Utility;
-using System.IO;
-using System.Reflection;
-using System.Collections.Generic;
-using RamuneLib;
-using FMOD;
-using Nautilus.Json;
-using Nautilus.Options.Attributes;
-using UnityEngine;
-using UnityEngineInternal.Input;
-using System.Diagnostics;
-using Nautilus.Options;
-using System;
 
 namespace Ramune.CustomCyclopsHorn
 {

@@ -6,7 +6,7 @@ namespace Ramune.RamunesOutcrops
 {
     public static class Helpers
     {
-        public static TechType CreateOutcrop(string id, string name, string description, TechType toClone, LootDistributionData.BiomeData[] biomeData)
+        public static TechType CreateOutcrop(string id, string name, string description, TechType toClone, LootDistributionData.BiomeData[] biomeData, params(TechType, TechType, float) []dropData)
         {
             var info = Utilities.CreatePrefabInfo(id, name, description, Utilities.GetSprite($"{id}Sprite"), 1, 1);
             var prefab = new CustomPrefab(info);
@@ -17,26 +17,20 @@ namespace Ramune.RamunesOutcrops
                     var renderer = go.GetComponentInChildren<MeshRenderer>(true);
                     foreach (var m in renderer.materials)
                     {
-                        m.mainTexture = Utilities.GetTexture($"{id}Texture_1");
-                        m.SetTexture("_SpecTex", Utilities.GetTexture($"{id}Texture_1"));
+                        m.SetTexture(ShaderPropertyID._MainTex, Utilities.GetTexture($"{id}Texture"));
+                        m.SetTexture(ShaderPropertyID._SpecTex, Utilities.GetTexture($"{id}Texture"));
                     }
-
                     var breakable = go.GetComponent<BreakableResource>();
                     breakable.breakText = $"Break {name.ToLower()}";
                     breakable.RemoveVanillaDrops();
                 }
             };
-
-            OutcropsUtils.EnsureOutcropDrop(new List<(TechType, TechType, float)>()
-            {
-                {( prefab.Info.TechType, TechType.Kyanite, 0.5f )},
-                {( prefab.Info.TechType, TechType.Quartz, 0.5f )},
-            });
-
             prefab.SetPdaGroupCategory(TechGroup.Resources, TechCategory.BasicMaterials);
             prefab.SetGameObject(clone);
             prefab.SetSpawns(biomeData);
             prefab.Register();
+
+            OutcropsUtils.EnsureOutcropDrop(dropData);
 
             return prefab.Info.TechType;
         }

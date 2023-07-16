@@ -29,10 +29,10 @@ namespace Ramune.RamunesOutcrops
         {
             Logger.LogInfo($"{pluginName} {versionString} is patching outcrops..");
 
-            LodestoneOutcrop = Helpers.CreateOutcrop("LodestoneOutcrop",  "Lodestone outcrop",  "A lodestone outcrop.",  TechType.BasaltChunk, Helpers.CreateBiomeData(Data.BiomeData.Lodestone));
-            GeyseriteOutcrop = Helpers.CreateOutcrop("GeyseriteOutcrop",  "Geyserite outcrop",   "A geyserite outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(Data.BiomeData.Geyserite));
-            SiltstoneOutcrop = Helpers.CreateOutcrop("SiltstoneOutcrop",  "Siltstone outcrop",  "A siltstone outcrop.",  TechType.LimestoneChunk, Helpers.CreateBiomeData(Data.BiomeData.Siltstone));
-            SerpentiteOutcrop = Helpers.CreateOutcrop("SerpentiteOutcrop", "Serpentite outcrop", "A serpentite outcrop.", TechType.SandstoneChunk, Helpers.CreateBiomeData(Data.BiomeData.Serpentite));
+            LodestoneOutcrop = Helpers.CreateOutcrop("LodestoneOutcrop",  "Lodestone outcrop",  "A lodestone outcrop.",  TechType.BasaltChunk, Helpers.CreateBiomeData(Data.BiomeData.Lodestone), Data.OutcropData.Lodestone);
+            GeyseriteOutcrop = Helpers.CreateOutcrop("GeyseriteOutcrop",  "Geyserite outcrop",   "A geyserite outcrop.", TechType.ShaleChunk, Helpers.CreateBiomeData(Data.BiomeData.Geyserite), Data.OutcropData.Geyserite);
+            SiltstoneOutcrop = Helpers.CreateOutcrop("SiltstoneOutcrop",  "Siltstone outcrop",  "A siltstone outcrop.",  TechType.LimestoneChunk, Helpers.CreateBiomeData(Data.BiomeData.Siltstone), Data.OutcropData.Siltstone);
+            SerpentiteOutcrop = Helpers.CreateOutcrop("SerpentiteOutcrop", "Serpentite outcrop", "A serpentite outcrop.", TechType.SandstoneChunk, Helpers.CreateBiomeData(Data.BiomeData.Serpentite), Data.OutcropData.Serpentite);
 
             Logger.LogInfo($"{pluginName} {versionString} has been loaded! (yay)");
         }

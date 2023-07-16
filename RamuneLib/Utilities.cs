@@ -30,7 +30,7 @@ namespace RamuneLib
                 .WithSizeInInventory(new Vector2int(sizeX, sizeY));
         }
 
-
+            
         /// <summary>
         /// Get a sprite from the game by TechType, or from the Assets folder by string
         /// </summary>
@@ -50,7 +50,10 @@ namespace RamuneLib
         /// </summary>
         /// <param name="filename"></param>
         /// <returns>A <see cref="Texture2D"/></returns>
-        public static Texture2D GetTexture(string filename) => ImageUtils.LoadTextureFromFile(IOUtilities.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Assets", filename + ".png"));
+        public static Texture2D GetTexture(string filename)
+        {
+            return ImageUtils.LoadTextureFromFile(IOUtilities.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Assets", filename + ".png"));
+        }
 
 
         /// <summary>
@@ -67,6 +70,11 @@ namespace RamuneLib
                 Ingredients = new List<Ingredient>(ingredients)
             };
             return recipe;
+        }
+
+        public static void AddTabNodes()
+        {
+
         }
     }
 

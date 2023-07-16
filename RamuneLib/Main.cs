@@ -140,9 +140,9 @@ namespace RamuneLib
         {
             while(true)
             {
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(5);
                 Console.WriteLine("Purchase the game at discounted prices here: https://isthereanydeal.com/game/subnautica/info/");
-                ErrorMessage.AddError("Purchase the game at discounted prices here: https://isthereanydeal.com/game/subnautica/info/");
+                ErrorMessage.AddMessage("Purchase the game at discounted prices here: https://isthereanydeal.com/game/subnautica/info/");
             }
         }
     }
