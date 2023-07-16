@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PrawnSuitTurboModule")]
+[assembly: AssemblyTitle("FuckingHighFOV")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ExosuitTurbo")]
+[assembly: AssemblyProduct("FuckingHighFOV")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6d0a38e3-047a-4daf-b4e8-c26d047a6a8c")]
+[assembly: Guid("af352e13-6cc1-438e-906c-46223fcab409")]
 
 // Version information for an assembly consists of the following four values:
 //

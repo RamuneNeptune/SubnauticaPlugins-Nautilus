@@ -82,6 +82,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrawnSuitTurbo", "PrawnSuit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackableJumpJets", "PrawnSuitJumpJetUpgrade\StackableJumpJets.csproj", "{48D61E73-B717-4AC9-B2E1-EA9270B57BA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuckingHighFOV", "FuckingHighFOV\FuckingHighFOV.csproj", "{AF352E13-6CC1-438E-906C-46223FCAB409}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BepInEx.Installer", "BepInEx.Installer\BepInEx.Installer.csproj", "{70875EE3-99B1-4B03-8EB7-D7128E3E83CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrganizedWorkbench", "OrganizedWorkbench\OrganizedWorkbench.csproj", "{B64B0676-1B02-4008-A3E9-B503ED876917}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -206,6 +212,18 @@ Global
 		{48D61E73-B717-4AC9-B2E1-EA9270B57BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48D61E73-B717-4AC9-B2E1-EA9270B57BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48D61E73-B717-4AC9-B2E1-EA9270B57BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF352E13-6CC1-438E-906C-46223FCAB409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF352E13-6CC1-438E-906C-46223FCAB409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF352E13-6CC1-438E-906C-46223FCAB409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF352E13-6CC1-438E-906C-46223FCAB409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70875EE3-99B1-4B03-8EB7-D7128E3E83CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70875EE3-99B1-4B03-8EB7-D7128E3E83CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70875EE3-99B1-4B03-8EB7-D7128E3E83CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70875EE3-99B1-4B03-8EB7-D7128E3E83CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B64B0676-1B02-4008-A3E9-B503ED876917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B64B0676-1B02-4008-A3E9-B503ED876917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B64B0676-1B02-4008-A3E9-B503ED876917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B64B0676-1B02-4008-A3E9-B503ED876917}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -245,6 +263,9 @@ Global
 		{476559ED-5CC2-4B62-9825-D992E396DB03} = {5DDDB3B9-9E1E-464F-B90C-3C6B7B044A63}
 		{5EDD0929-143D-40B4-A8C8-B823183CFF4E} = {5DDDB3B9-9E1E-464F-B90C-3C6B7B044A63}
 		{48D61E73-B717-4AC9-B2E1-EA9270B57BA3} = {5DDDB3B9-9E1E-464F-B90C-3C6B7B044A63}
+		{AF352E13-6CC1-438E-906C-46223FCAB409} = {5DDDB3B9-9E1E-464F-B90C-3C6B7B044A63}
+		{70875EE3-99B1-4B03-8EB7-D7128E3E83CC} = {45839E69-0DD0-4A54-86EB-7C1B925A9A66}
+		{B64B0676-1B02-4008-A3E9-B503ED876917} = {DCE23348-1DD4-41C7-897B-57EEA760D888}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C92EE9F4-51B0-4E47-8021-0C968DB68EC0}
@@ -271,7 +292,9 @@ Global
 		RamuneLib\RamuneLib.projitems*{848023b0-3427-4daa-8717-e152ab79d0ad}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{8ca6c8f0-5467-4641-86ab-f6f9b89e090b}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{95b50703-6e53-4f20-be82-c0f7c10adf44}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{af352e13-6cc1-438e-906c-46223fcab409}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{b614f277-05f1-4137-9bf9-c455cd2c28ae}*SharedItemsImports = 4
+		RamuneLib\RamuneLib.projitems*{b64b0676-1b02-4008-a3e9-b503ed876917}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{ba9d835c-99af-495b-9ed7-bfe2c448b71f}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{c14d5527-d426-4a68-bbb2-9b83ad8896d2}*SharedItemsImports = 4
 		RamuneLib\RamuneLib.projitems*{d2df8c83-c180-402b-8009-094be6ca2c4a}*SharedItemsImports = 4

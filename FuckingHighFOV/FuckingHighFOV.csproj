@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{476559ED-5CC2-4B62-9825-D992E396DB03}</ProjectGuid>
+    <ProjectGuid>{AF352E13-6CC1-438E-906C-46223FCAB409}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PrawnSuitReinforcements</RootNamespace>
-    <AssemblyName>PrawnSuitReinforcements</AssemblyName>
+    <RootNamespace>Ramune.FuckingHighFOV</RootNamespace>
+    <AssemblyName>FuckingHighFOV</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -87,7 +88,7 @@
       <HintPath>..\packages\MonoMod.Utils.21.12.13.1\lib\net452\MonoMod.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Nautilus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Subnautica.Nautilus.1.0.0-pre.16\lib\net472\Nautilus.dll</HintPath>
+      <HintPath>..\packages\Subnautica.Nautilus.1.0.0-pre.19\lib\net472\Nautilus.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -343,7 +344,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BepInEx.cs" />
-    <Compile Include="Helpers.cs" />
+    <Compile Include="Patches\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -363,4 +364,10 @@
   </Target>
   <Import Project="..\packages\BepInEx.Core.5.4.21\build\BepInEx.Core.targets" Condition="Exists('..\packages\BepInEx.Core.5.4.21\build\BepInEx.Core.targets')" />
   <Import Project="..\packages\PolySharp.1.13.1\build\PolySharp.targets" Condition="Exists('..\packages\PolySharp.1.13.1\build\PolySharp.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "C:\Program Files (x86)\Steam\steamapps\common\Subnautica\BepInEx\plugins\$(TargetName)"
+copy /Y "$(TargetPath)" "C:\Program Files (x86)\Steam\steamapps\common\Subnautica\BepInEx\plugins\$(TargetName)"
+IF EXIST "C:\Program Files (x86)\Steam\steamapps\common\Subnautica\BepInEx\plugins\$(TargetName)\$(TargetName).zip" ( del "C:\Program Files (x86)\Steam\steamapps\common\Subnautica\BepInEx\plugins\$(TargetName)\$(TargetName).zip")
+"C:\Program Files\7-Zip\7z.exe" a "C:\Program Files (x86)\Steam\steamapps\common\Subnautica\BepInEx\plugins\$(TargetName)\$(TargetName).zip" "C:\Program Files (x86)\Steam\steamapps\common\Subnautica\BepInEx\plugins\$(TargetName)"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
